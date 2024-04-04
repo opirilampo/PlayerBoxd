@@ -28,54 +28,112 @@
         p {display:inline}
 
 
-
-
         #header {
-            display: inline-block;
-            width: 100%;
-            padding: 2px 5px 2px 5px;
-            border-bottom: 1px solid #000;
-            top: 3;
-            height: 50px;
-        }
-        .logo {
-            text-align: center;
-            margin: 0; /* Remove a margem */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px dotted #000; 
+            background-color: rgb(156,155,164);
         }
 
+        #header .dropdown {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        #header .dropdown a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        #header button:hover .dropdown {
+            display: block;
+        }
+
+        #header .icon-container {
+            display: flex;
+            align-items: center;
+        }
+
+        #header .icon-container img {
+            width: 24px;
+            height: 24px;
+            margin-left: 10px;
+        }
+
+        #header .icon-container .vertical-line {
+            height: 30px;
+            border-left: 1px solid black;
+            margin-left: 10px;
+        }
+
+        #header::after {
+            content: "";
+            display: block;
+            border-top: 1px dotted #000;
+            margin: 10px 20px;
+        }
     </style>
     
 </head>
 <body  style="background-color: rgb(156,155,164)">
     <header id="header">
 
-        <div>
-            <form id="formn"> 
-                <input type="search" id="query" name="q" placeholder="Pesquisar..." class="bar">
-                <button class="p">Ir</button>
-            </form>
+        <input type="search" class="search-bar" placeholder="Pesquisar...">
+        <button>
+            GAMES
+            <div class="dropdown">
+                <a href="#">TESTE 1</a>
+                <a href="#">TESTE 2</a>
+                <a href="#">TESTE 3</a>
+            </div>
+        </button>
+
+        <button>
+            AMIGOS
+            <div class="dropdown">
+                <a href="#">TESTE 1</a>
+                <a href="#">TESTE 2</a>
+                <a href="#">TESTE 3</a>
+            </div>
+        </button>
+
+        <h1>PLAYERBOXD</h1>
+
+        <button>
+            LISTA
+            <div class="dropdown">
+                <a href="#">TESTE 1</a>
+                <a href="#">TESTE 2</a>
+                <a href="#">TESTE 3</a>
+            </div>
+        </button>
+
+        <button>
+            SUA ATIVIDADE
+            <div class="dropdown">
+                <a href="#">TESTE 1</a>
+                <a href="#">TESTE 2</a>
+                <a href="#">TESTE 3</a>
+            </div>
+        </button>
+        <div class="icon-container">
+            <div class="vertical-line"></div>
+            <a href="#"><img src="https://cdn-icons-png.freepik.com/256/1144/1144760.png" alt="Pessoa"></a>
+            <a href="#"><img class="" src="https://www.freepnglogos.com/uploads/plus-icon/plus-icon-plus-svg-png-icon-download-1.png" alt="Mais"></a>
         </div>
 
-        
-        <div>
-            <h1 style="text-align: center;" class="logo">PLAYERBOXD</h1>
-        </div>
-        
-
-
-        <div >
-
-            <p>
-                GAMES
-            </p>
-
-        </div>
-
-
-
-        
-        </div>
     </header>
+
+
+
         <center>
             <img src="https://pbs.twimg.com/media/GIffv5zXQAAWSSL.jpg" alt="Nome do Jogo" class="cont" >
         </center>
