@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title>GameBoxd</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-        }
-        .game-card {
-            border: 1px solid #ddd;
-            margin: 10px;
-            padding: 10px;
-            width: 200px;
-        }
-        .game-card img {
-            width: 100%;
         }
         .cont {
             opacity: 0.5;
@@ -21,40 +14,16 @@
             border-radius: 2%;
 
         }
-        .bar {
-            border-radius: 10%;
-
-        }
-        p {display:inline}
-
 
         #header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             padding: 10px;
-            border-bottom: 1px dotted #000; 
             background-color: rgb(156,155,164);
         }
 
-        #header .dropdown {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        #header .dropdown a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        #header button:hover .dropdown {
-            display: block;
+        #header .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         #header .icon-container {
@@ -74,61 +43,172 @@
             margin-left: 10px;
         }
 
-        #header::after {
-            content: "";
-            display: block;
+        #header .dotted-line {
             border-top: 1px dotted #000;
             margin: 10px 20px;
         }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 4px 20px;
+            cursor: pointer;    
+        }
+
+        #header .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 20px;
+
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border-radius: 20px;
+
+        }
+
+        .dropdown-content a:hover {background-color: #f1f1f1}
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        #header .logo {
+            border: none;
+            color:aqua;
+            text-decoration: none;
+            font-size: 30px;
+            font-weight:bold;
+            text-align: center;
+
+
+
+        }
+        #search-container {
+    position: relative;
+    display: inline-block;
+        }
+
+        #search-container {
+            position: relative;
+            display: inline-block;
+            width: 130px;
+            box-sizing: border-box;
+            border: 2px solid #000000;
+            border-radius: 20px;
+            padding: 10px 10px 12px 4px;
+            -webkit-transition: width 1.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+
+        #search-container:focus-within {
+            width: 20%;
+        }
+
+        input[type=text] {
+            font-size: 16px;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            width: 80%;
+        }
+
+        #search-btn {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        #search-btn i {
+            font-size: 20px;
+        }
+
+
     </style>
     
 </head>
 <body  style="background-color: rgb(156,155,164)">
     <header id="header">
+        <div class="header-content">
 
-        <input type="search" class="search-bar" placeholder="Pesquisar...">
-        <button>
-            GAMES
+            <div id="search-container">
+                <div id="input-button-container">
+                    <input type="text" id="search-bar" placeholder="Pesquisar...">
+                    <button id="search-btn">
+                        <i class="fa fa-search" alt="ícone de pesquisa"></i>
+                    </button>
+                </div>
+              </div>
+
             <div class="dropdown">
-                <a href="#">TESTE 1</a>
-                <a href="#">TESTE 2</a>
-                <a href="#">TESTE 3</a>
+                <a href="#" class="button">GAMES</a>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
             </div>
-        </button>
 
-        <button>
-            AMIGOS
             <div class="dropdown">
-                <a href="#">TESTE 1</a>
-                <a href="#">TESTE 2</a>
-                <a href="#">TESTE 3</a>
+                <a href="#" class="button">AMIGOS</a>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
             </div>
-        </button>
+            
+            <a href="#" class="logo">PLAYERBOXD</a>
 
-        <h1>PLAYERBOXD</h1>
 
-        <button>
-            LISTA
             <div class="dropdown">
-                <a href="#">TESTE 1</a>
-                <a href="#">TESTE 2</a>
-                <a href="#">TESTE 3</a>
+                <a href="#" class="button">LISTA</a>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
             </div>
-        </button>
 
-        <button>
-            SUA ATIVIDADE
             <div class="dropdown">
-                <a href="#">TESTE 1</a>
-                <a href="#">TESTE 2</a>
-                <a href="#">TESTE 3</a>
+                <a href="#" class="button">SUA ATIVIDADE</a>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
             </div>
-        </button>
-        <div class="icon-container">
-            <div class="vertical-line"></div>
-            <a href="#"><img src="https://cdn-icons-png.freepik.com/256/1144/1144760.png" alt="Pessoa"></a>
-            <a href="#"><img class="" src="https://www.freepnglogos.com/uploads/plus-icon/plus-icon-plus-svg-png-icon-download-1.png" alt="Mais"></a>
+
+            <div class="icon-container">
+                <div class="vertical-line"></div>
+                <a href="#"><img src="https://cdn-icons-png.freepik.com/256/1144/1144760.png" alt="Pessoa"></a>
+                <a href="#"><img class="" src="https://www.freepnglogos.com/uploads/plus-icon/plus-icon-plus-svg-png-icon-download-1.png" alt="Mais"></a>
+            </div>
         </div>
+        
+        <!-- Adiciona a linha pontilhada dentro do cabeçalho -->
+        <div class="dotted-line"></div>
 
     </header>
 
