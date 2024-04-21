@@ -38,8 +38,25 @@
     }
     
     #header .dotted-line {
-        border-top: 1px dotted #F4EEE0;
+        border-top: 1px dotted #faf0db;
         margin: 10px ;
+    }
+    footer {
+        border-top: 1px solid #faf0db;
+        display:flex;
+
+    }
+
+    .left-buttons {
+        margin-right: auto;
+    }
+    .right-buttons {
+        margin-left: auto;
+    }
+    .center-button {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .cont-img {
@@ -66,11 +83,6 @@
         display:grid;
         grid-template-rows: repeat(3, 1fr);
     }
-    .row-list{
-        display: flex;
-        flex-direction: row;
-
-    }
     .covers{
         display: flex;
         flex-direction: row;
@@ -78,12 +90,13 @@
     .card-stack{
         margin-right: -175px;
     }
-    .card-cover{
+    .card-cover {
         height: 100px;
         margin-right: -35px;
+        padding: 0px;
         border-radius: 4px;
         border: 1px solid #f4eee01e;
-        box-sizing: border-box;
+
 
     }
     .game-cover {
@@ -154,13 +167,25 @@
     }
 
     
-    .button {
+    #header .button {
         border: none;
         color: #F4EEE0;
-        padding: 10px 15px;
+        margin-top: 10px;
+        padding: 10px;
         text-align: center;
         font-family: Lucida Sans Typewriter;
         text-decoration: none;
+        font-size: 18px;
+    }
+
+    .button {
+        border: none;
+        color: #95845a;
+        align-content: end;
+        padding: 10px 10px 10px;
+        font-family: Lucida Sans Typewriter;
+        text-decoration: none;
+        bottom: 0%;
         font-size: 18px;
     }
 
@@ -316,15 +341,13 @@
                     <div class="card-stack">
 
                         <a href="#">
-                            <div class="row-list">
-                                    <div class="covers">
-                                        <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
-                                        <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
-                                        <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
-                                        <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
-                                        <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
-    
-                                    </div>
+                            <div class="covers">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
+
                             </div>
                         </a>
 
@@ -449,7 +472,26 @@
         </div>
 
     </div>
+    <footer>
+        <div class="left-buttons">
+            <a href="#" class="button" style="font-size: 15px;">AJUDA</a>
+            <a href="#" class="button" style="font-size: 15px;">SOBRE NÓS</a>
+        </div>
+        <div class="center-button">
+            <a href="#" class="button" style="text-decoration: underline;">CONFIGURAÇÕES</a>
+        </div>
+        <div class="right-buttons">
+            <div class="icon-container">
+                <a href="#"><img src="#" alt="Youtube"></a>
+                <a href="#"><img class="" src="#" alt="Tiktok"></a>
+                <a href="#"><img src="../boxd/insta.png" alt="Instagram"></a>
+                <a href="#"><img class="" src="#" alt="Twitter"></a>
+            </div>
+        </div>
 
+
+        
+    </footer>
     
 </body>
 </html>
