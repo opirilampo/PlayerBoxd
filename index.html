@@ -72,16 +72,16 @@
 
     }
     .covers{
-        align-self: ;
         display: flex;
         flex-direction: row;
     }
 
     .card-cover{
-        height: 90px;
+        height: 100px;
         margin-right: -35px;
         border-radius: 4px;
         border: 1px solid #f4eee01e;
+        box-sizing: border-box;
 
     }
     .game-cover {
@@ -102,6 +102,46 @@
         font-size: 24px;
         font-weight: bold;
         margin-bottom: 14px;
+    }
+    .username{
+        font-family: Lucida Sans Typewriter;
+        text-decoration: none;
+        font-size: 10px;
+        color: #b6a375;
+        margin-top: 0px;
+        font-weight: bold;
+        
+    }
+    
+    .username:hover{
+        color: inherit; 
+        text-decoration: none; 
+    }
+    .secondary-link{
+        font-family: Lucida Sans Typewriter;
+        text-decoration: none;
+        font-size: 14px;
+        color: #F4EEE0;
+        font-weight: bold;
+        margin-bottom: 0 px;
+    }
+    .secondary-link:hover{
+        color: inherit; 
+        text-decoration: none; 
+    }
+
+    .small-text{
+        font-family: Lucida Sans Typewriter;
+        text-decoration: none;
+        font-size: 10px;
+        color: #d5c6a1;
+        margin-top: 0px;
+
+    }
+    .details{
+        display: inline-flex;
+        margin-top: 1px;
+
     }
 
     .body-columns{
@@ -166,7 +206,7 @@
     #search-container {
         position: relative;
         width: 130px;
-        border: 2px solid white;
+        border: 2px solid #F4EEE0;
         border-radius: 20px;
         padding: 10px 10px 12px 4px;
         -webkit-transition: width 1.4s ease-in-out;
@@ -268,42 +308,104 @@
     <div class="int-body"> 
 
         <div class="body-columns">
-            <div alt="popular games">
-                <div class="title">POPULAR</div>
+            <div alt="popular lists">
+                <div class="title">LISTAS EM ALTA</div>
                 <div class="grid-list">
-                    <a href="#">
-                        <div class="row-list">
-                                <div class="covers">
-                                    <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
-                                    <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
-                                    <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
+                    <div class="card-stack">
 
-                                </div>
+                        <a href="#">
+                            <div class="row-list">
+                                    <div class="covers">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
+    
+                                    </div>
+                            </div>
+                        </a>
+
+                        <div alt="informações sobre a lista">
+                            <a class="secondary-link" href="#">
+                                Melhores personagens <br>
+                            </a>
+                            <div class="details">
+                                <p class="small-text" >
+                                    Por
+                                    <a class="username" href="#">
+                                        Fulano
+                                    </a>
+                                | 10 games
+                            </p>
                         </div>
-                    </a>
-
-                    <a href="#">
-                        <div class="row-list">
-                                <div class="covers">
-                                    <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
-                                    <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
-                                    <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
-
-                                </div>
                         </div>
-                    </a>
 
-                    <a href="#">
-                        <div class="row-list">
-                                <div class="covers">
-                                    <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
-                                    <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
-                                    <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
+                    </div>
 
-                                </div>
+                    <div class="card-stack">
+
+                        <a href="#">
+                            <div class="row-list">
+                                    <div class="covers">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
+    
+                                    </div>
+                            </div>
+                        </a>
+
+                        <div alt="informações sobre a lista">
+                            <a class="secondary-link" href="#">
+                                Melhores personagens <br>
+                            </a>
+                            <div class="details">
+                                <p class="small-text" >
+                                    Por
+                                    <a class="username" href="#">
+                                        Fulano
+                                    </a>
+                                | 10 games
+                            </p>
                         </div>
-                    </a>
+                        </div>
 
+                    </div>
+
+                    <div class="card-stack">
+
+                        <a href="#">
+                            <div class="row-list">
+                                    <div class="covers">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-cover">
+    
+                                    </div>
+                            </div>
+                        </a>
+
+                        <div alt="informações sobre a lista">
+                            <a class="secondary-link" href="#">
+                                Melhores personagens <br>
+                            </a>
+                            <div class="details">
+                                <p class="small-text" >
+                                    Por
+                                    <a class="username" href="#">
+                                        Fulano
+                                    </a>
+                                | 10 games
+                            </p>
+                        </div>
+                        </div>
+
+                    </div>
 
                 </div>
             </div>
