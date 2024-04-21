@@ -51,7 +51,10 @@
     .grid-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: 7px;
+        gap: 7px;
+        justify-content: center;
+        justify-items: center;
+        
     }
     .game-cover {
     width: auto;
@@ -75,7 +78,8 @@
 
     .body-columns{
         display: grid;
-        grid-template-columns: 50% 50%;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-between;
 
     }
 
