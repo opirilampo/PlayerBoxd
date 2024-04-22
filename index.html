@@ -95,15 +95,16 @@
     }
 
     .grid-list{
-        display:grid;
-        grid-template-rows: repeat(, 1fr);
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        justify-items: stretch;
+        justify-content: space-evenly;
     }
     .covers{
         display: flex;
         flex-direction: row;
     }
     .card-stack{
-        margin-right: -175px;
     }
     .card-cover {
         height: 100px;
