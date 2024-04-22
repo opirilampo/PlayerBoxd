@@ -21,13 +21,17 @@
     margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
-}
+    }
 
-#header .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    #header .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #header .icon {
+        margin-left: 15px;
+        filter: invert(90%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);
+    }
 
     .icon-container {
         display: flex;
@@ -41,21 +45,21 @@
     
     #header .icon-container .vertical-line {
         height: 30px;
-        border-left: 1px solid black;
+        border-left: 1px solid #faf0db;
     }
     
 
     footer {
-        border-top: 1px solid #faf0db;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            margin-left: auto;
-            margin-right: auto;
-            width: 90%;
+    border-top: 1px solid #faf0db;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
     }
 
     .left-buttons {
@@ -92,7 +96,7 @@
 
     .grid-list{
         display:grid;
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-rows: repeat(, 1fr);
     }
     .covers{
         display: flex;
@@ -126,6 +130,7 @@
         text-align: center;
         font-family: Trebuchet MS;
         font-size: 24px;
+        color: #95845a;
         font-weight: bold;
         margin-bottom: 14px;
     }
@@ -175,8 +180,7 @@
 
     .body-columns{
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        justify-content: space-between;
+        grid-template-rows: repeat(2, 1fr);
 
     }
 
@@ -339,8 +343,8 @@
 
             <div class="icon-container">
                 <div class="vertical-line"></div>
-                <a href="#"><img src="https://cdn-icons-png.freepik.com/256/1144/1144760.png" alt="Pessoa"></a>
-                <a href="#"><img class="" src="https://www.freepnglogos.com/uploads/plus-icon/plus-icon-plus-svg-png-icon-download-1.png" alt="Mais"></a>
+                <a href="#"><img class="icon"src="https://cdn-icons-png.freepik.com/256/1144/1144760.png" alt="Pessoa"></a>
+                <a href="#"><img class="icon" src="https://www.freepnglogos.com/uploads/plus-icon/plus-icon-plus-svg-png-icon-download-1.png" alt="Mais"></a>
             </div>
         </div>
         
@@ -449,7 +453,7 @@
                 </div>
             </div>
 
-            <div class="right-grid" alt="popular games">
+            <div alt="popular games">
                 <div class="title">POPULAR</div>
                 <div class="grid-container">
                     <div><a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="game-cover"></a></div>
@@ -458,9 +462,7 @@
                     <div><a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="game-cover"></a></div>
                     <div><a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="game-cover"></a></div>
                     <div><a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="game-cover"></a></div>
-                    <div><a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="game-cover"></a></div>
-                    <div><a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="game-cover"></a></div>
-                    <div><a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="game-cover"></a></div>
+
                 </div>
             </div>
         </div>
