@@ -2,7 +2,9 @@ body {
     align-self: center;
     background-color: #393646;
 }
-
+.popular{
+    margin-top: 20px;
+}
 header {
 padding: 10px;
 width: 80%;
@@ -45,11 +47,11 @@ display: flex;
 justify-content: center; /* Centraliza horizontalmente */
 align-items: center;
 padding: 10px;
-position: fixed;
-bottom: 0;
+position: absolute;
 left: 50%;
 transform: translateX(-50%);
 width: 90%;
+bottom:0px;
 }
 
 .left-buttons {
@@ -72,44 +74,66 @@ width: 90%;
 
 .central-img{
     display: flex;
+    justify-content: space-around;
     grid-column: 2;
+    
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 7px;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    column-gap: 10px;
     justify-content: center;
     justify-items: center;
     
 }
 
 .grid-list{
-    display:grid;
-    grid-template-rows: repeat(, 1fr);
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: stretch;
+    justify-content: space-evenly;
+    
 }
-.covers{
+
+.card-stack{
+}
+.covers {
     display: flex;
     flex-direction: row;
+    overflow: hidden; 
+    border-radius: 6px;
 }
-.card-stack{
-    margin-right: -175px;
-}
+
 .card-cover {
+    width: auto;
     height: 100px;
-    margin-right: -35px;
+    margin-right: -25px; 
     padding: 0px;
-    border-radius: 4px;
+    border-radius: 6px;
     border: 1px solid #f4eee01e;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
 
-
+.card-cover:hover {
+    transform: scale(1.1);
+    z-index: 2;
 }
 .game-cover {
-width: auto;
-height: 120px;
-object-fit: cover;
-border-radius: 4px;
-border: 1px solid transparent;
+    width: auto;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    margin-right: 10px;
+}
+.review-box .game-cover {
+height: 100px;
+margin-right: 5px;
+border: none;
 }
 
 .game-cover:hover {
@@ -118,10 +142,10 @@ border: 1px solid transparent;
 }
 .title {
     text-align: center;
-    font-family: Trebuchet MS;
+    font-family: Lucida Sans Typewriter;
     font-size: 24px;
     color: #95845a;
-    font-weight: bold;
+    font-weight: bolder;
     margin-bottom: 14px;
 }
 .username{
@@ -132,6 +156,10 @@ border: 1px solid transparent;
     margin-top: 0px;
     font-weight: bold;
     
+}
+.review-box .username{
+    color: #d5c6a1;
+
 }
 
 .username:hover{
@@ -158,19 +186,21 @@ border: 1px solid transparent;
     text-decoration: none;
     font-size: 10px;
     color: #d5c6a1;
-    margin-top: 0px;
+    margin-top: 5px;
 
 }
 
-.details{
-    display: inline-flex;
-    margin-top: 1px;
-
+.review-box .owner{
+    font-family: Lucida Sans Typewriter;
+    text-decoration: none;
+    font-size: 10px;
+    color: #b6a375;
+    margin-left: 5px;
+    margin-bottom: 0px;
 }
-
 .body-columns{
     display: grid;
-    grid-template-rows: repeat(, 1fr);
+    justify-content: end;
 
 }
 
@@ -221,11 +251,13 @@ text-decoration: none;
     text-decoration: none;
     display: block;
     border-radius: 20px;
+    
 
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
+    
 }
 
 #header .logo {
@@ -248,6 +280,14 @@ text-decoration: none;
     transition: width 0.4s ease-in-out;
 }
 
+#search-container:focus-within {
+        width: 120%;
+}
+
+#header .search-rect{
+    width: 12%;
+    height: auto;
+}
 
 input[type=text] {
     font-size: 16px;
@@ -271,11 +311,104 @@ input[type=text] {
     font-size: 20px;
 }
 
+.container {
+    width: 100%;
+    height: 690px;
+    overflow-y: scroll;
+    border: 1px solid #000;
+    
+}
 
+.review-box {
+display: flex;
+width: 90%;
+height: 20%; 
+background-color: #2e2c37;
+border-radius: 10%; 
+color: #fff; 
+padding: 10px;
+margin-bottom: 10px; 
+border-left: 3px solid #be9631;
+border-top: 1px solid #be9631;
+border-bottom: 1px solid #be9631;
+align-items: center;
+box-shadow: 0 16px 20px rgba(0,0,0,.1);
+
+}
+
+.review-box h3 {
+margin: 0;
+font-family: Lucida Sans Typewriter;
+font-size: 16px;
+color: #d5c6a1;
+text-decoration: underline;
+
+}
+.review-box p {
+    font-family: Lucida Sans Typewriter;
+    text-decoration: none;
+    font-size: 10px;
+    color: #f0ede3;
+    margin-top: 3px;
+}
+.review-box .rating {
+    color: #e6a70d;
+    font-size: 22px; 
+}
 .int-body{
     display:grid;
-    grid-template-columns: 40% 30% 10%;
+    grid-template-columns: 30% 40% 30%;
 }
-.right-grid{
-    align-self: end;
+
+.internal-rect{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.box{
+    display:flex;
+    justify-content: start;
+    align-items: flex-start;
+}
+
+.review-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.review-box .info{
+    display: flex;
+}
+
+.review-box .review-text{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.review-writer{
+    display: flex;
+    align-items: center;
+
+}
+
+::-webkit-scrollbar {
+    width: 10px; 
+}
+
+
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: transparent; 
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #888; /
 }
