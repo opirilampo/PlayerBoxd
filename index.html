@@ -92,7 +92,8 @@
     .grid-container {
         display: grid;
         grid-template-rows: repeat(2, 1fr);
-        gap: 7px;
+        gap: 10px;
+        column-gap: 10px;
         justify-content: center;
         justify-items: center;
         
@@ -112,13 +113,15 @@
         display: flex;
         flex-direction: row;
         overflow: hidden; 
+        border-radius: 6px;
     }
     
     .card-cover {
+        width: auto;
         height: 100px;
-        margin-right: -35px; 
+        margin-right: -25px; 
         padding: 0px;
-        border-radius: 4px;
+        border-radius: 6px;
         border: 1px solid #f4eee01e;
         transition: transform 0.3s ease;
         position: relative;
@@ -130,20 +133,17 @@
         z-index: 2;
     }
     .game-cover {
-    width: auto;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 6px;
-    border: 1px solid transparent;
-    margin-right: 5px;
+        width: auto;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 6px;
+        border: 1px solid transparent;
+        margin-right: 10px;
     }
-    .review-cover {
-    width: auto;
+    .review-box .game-cover {
     height: 100px;
-    object-fit: cover;
-    border-radius: 4px;
-    border: 1px solid transparent;
     margin-right: 5px;
+    border: none;
     }
 
     .game-cover:hover {
@@ -152,10 +152,10 @@
     }
     .title {
         text-align: center;
-        font-family: Trebuchet MS;
+        font-family: Lucida Sans Typewriter;
         font-size: 24px;
         color: #95845a;
-        font-weight: bold;
+        font-weight: bolder;
         margin-bottom: 14px;
     }
     .username{
@@ -166,6 +166,10 @@
         margin-top: 0px;
         font-weight: bold;
         
+    }
+    .review-box .username{
+        color: #d5c6a1;
+
     }
 
     .username:hover{
@@ -194,6 +198,15 @@
         color: #d5c6a1;
         margin-top: 5px;
 
+    }
+
+    .review-box .owner{
+        font-family: Lucida Sans Typewriter;
+        text-decoration: none;
+        font-size: 10px;
+        color: #b6a375;
+        margin-left: 5px;
+        margin-bottom: 0px;
     }
     .body-columns{
         display: grid;
@@ -326,25 +339,31 @@
     padding: 10px;
     margin-bottom: 10px; 
     border-left: 3px solid #be9631;
+    border-top: 1px solid #be9631;
+    border-bottom: 1px solid #be9631;
+    align-items: center;
     box-shadow: 0 16px 20px rgba(0,0,0,.1);
 
     }
 
     .review-box h3 {
     margin: 0;
-    font-size: 12px;
-    padding-bottom: 5px;
+    font-family: Lucida Sans Typewriter;
+    font-size: 16px;
+    color: #d5c6a1;
+    text-decoration: underline;
+    
     }
     .review-box p {
         font-family: Lucida Sans Typewriter;
         text-decoration: none;
         font-size: 10px;
         color: #f0ede3;
-        margin-top: 1px;
+        margin-top: 3px;
     }
     .review-box .rating {
         color: #e6a70d;
-        font-size: 20px; 
+        font-size: 22px; 
     }
     .int-body{
         display:grid;
@@ -569,7 +588,7 @@
                             </a>
                                 <p class="small-text" >
                                     Por
-                                    <a class="username" href="#">
+                                    <a class="username"  href="#">
                                         Fulano
                                     </a>
                                 | 10 games
@@ -593,18 +612,18 @@
                 <div class="title">EM ALTA</div>
                 <div class="container">
                     <div class="review-box">
-                            <div><a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="review-cover"></a></div>
+                            <div><a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="game-cover"></a></div>
                         <div class="review-text">
                             <div class="info">
                                 <div class="review-writer">
-                                    <h3>Título do Jogo
-                                        <h2 class="small-text" >
+                                    <h3>Título do Jogo</h3>
+                                        <h2 class="owner" >
                                             Por
                                             <a class="username" href="#">
                                                 Fulano
                                             </a>
                                         </h2>
-                                    </h3>
+                                  
                             </div>
                         </div>
                                 <p>Esta é uma resenha do jogo. O jogo foi abandonado no Nintendo Switch. Aqui está um resumo da minha experiência...</p>
