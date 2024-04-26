@@ -86,6 +86,7 @@
         display: flex;
         justify-content: space-around;
         grid-column: 2;
+        
     }
 
     .grid-container {
@@ -131,6 +132,14 @@
     .game-cover {
     width: auto;
     height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    margin-right: 5px;
+    }
+    .review-cover {
+    width: auto;
+    height: 100px;
     object-fit: cover;
     border-radius: 4px;
     border: 1px solid transparent;
@@ -183,16 +192,9 @@
         text-decoration: none;
         font-size: 10px;
         color: #d5c6a1;
-        margin-top: 0px;
+        margin-top: 5px;
 
     }
-
-    .details{
-        display: inline-flex;
-        margin-top: 1px;
-
-    }
-
     .body-columns{
         display: grid;
         justify-content: end;
@@ -246,11 +248,13 @@
         text-decoration: none;
         display: block;
         border-radius: 20px;
+        
     
     }
     
     .dropdown:hover .dropdown-content {
         display: block;
+        
     }
     
     #header .logo {
@@ -273,6 +277,14 @@
         transition: width 0.4s ease-in-out;
     }
 
+    #search-container:focus-within {
+            width: 120%;
+    }
+
+    #header .search-rect{
+        width: 12%;
+        height: auto;
+    }
     
     input[type=text] {
         font-size: 16px;
@@ -297,50 +309,122 @@
     }
 
     .container {
-        width: 300px;
+        width: 100%;
         height: 690px;
         overflow-y: scroll;
         border: 1px solid #000;
+        
     }
 
     .review-box {
-    width: 100%;
-    height: auto; 
-    background-color: #333; 
+    display: flex;
+    width: 90%;
+    height: 20%; 
+    background-color: #2e2c37;
+    border-radius: 10%; 
     color: #fff; 
     padding: 10px;
     margin-bottom: 10px; 
-    border-left: 5px solid #f90; 
+    border-left: 3px solid #be9631;
+    box-shadow: 0 16px 20px rgba(0,0,0,.1);
+
     }
 
+    .review-box h3 {
+    margin: 0;
+    font-size: 12px;
+    padding-bottom: 5px;
+    }
+    .review-box p {
+        font-family: Lucida Sans Typewriter;
+        text-decoration: none;
+        font-size: 10px;
+        color: #f0ede3;
+        margin-top: 1px;
+    }
+    .review-box .rating {
+        color: #e6a70d;
+        font-size: 20px; 
+    }
     .int-body{
         display:grid;
         grid-template-columns: 30% 40% 30%;
     }
 
-    #box .internal-rect{
+    .internal-rect{
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        width: 70%;
     }
 
     .box{
         display:flex;
         justify-content: start;
+        align-items: flex-start;
+    }
+
+    .review-info{
+        display: flex;
         flex-direction: column;
     }
+
+    .review-box .info{
+        display: flex;
+    }
+    
+    .review-box .review-text{
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+    .review-writer{
+        display: flex;
+        align-items: center;
+
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px; 
+    }
+
+   
+    ::-webkit-scrollbar-track {
+        background: transparent; 
+    }
+
+
+    ::-webkit-scrollbar-thumb {
+        background: transparent; 
+    }
+
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #888; /
+    }
+
+
+
+
+
+
+
+
 </style>
 <body >
     <header id="header">
         <div class="header-content">
-
-            <div id="search-container">
-                <div>
-                    <input type="text" id="search-bar" placeholder="Pesquisar">
-                    <button id="search-btn">
-                        <i class="fa fa-search" alt="ícone de pesquisa" style="filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);"></i>
-                    </button>
-                </div>
-              </div>
+            <div class="search-rect">
+                <div id="search-container">
+                    <div>
+                        <input type="text" id="search-bar" placeholder="Pesquisar">
+                        <button id="search-btn">
+                            <i class="fa fa-search" alt="ícone de pesquisa" style="filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);"></i>
+                        </button>
+                    </div>
+                  </div>
+            </div>
 
             <div class="dropdown">
                 <a href="#" class="button">GAMES</a>
@@ -427,7 +511,6 @@
                             <a class="secondary-link" href="#">
                                 Melhores personagens <br>
                             </a>
-                            <div class="details">
                                 <p class="small-text" >
                                     Por
                                     <a class="username" href="#">
@@ -435,7 +518,6 @@
                                     </a>
                                 | 10 games
                             </p>
-                        </div>
                         </div>
 
                     </div>
@@ -457,7 +539,6 @@
                             <a class="secondary-link" href="#">
                                 Melhores personagens <br>
                             </a>
-                            <div class="details">
                                 <p class="small-text" >
                                     Por
                                     <a class="username" href="#">
@@ -465,7 +546,6 @@
                                     </a>
                                 | 10 games
                             </p>
-                        </div>
                         </div>
 
                     </div>
@@ -487,7 +567,6 @@
                             <a class="secondary-link" href="#">
                                 Melhores personagens <br>
                             </a>
-                            <div class="details">
                                 <p class="small-text" >
                                     Por
                                     <a class="username" href="#">
@@ -495,7 +574,6 @@
                                     </a>
                                 | 10 games
                             </p>
-                        </div>
                         </div>
 
                     </div>
@@ -514,7 +592,27 @@
             <div class="internal-rect">
                 <div class="title">EM ALTA</div>
                 <div class="container">
-                    
+                    <div class="review-box">
+                            <div><a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="review-cover"></a></div>
+                        <div class="review-text">
+                            <div class="info">
+                                <div class="review-writer">
+                                    <h3>Título do Jogo
+                                        <h2 class="small-text" >
+                                            Por
+                                            <a class="username" href="#">
+                                                Fulano
+                                            </a>
+                                        </h2>
+                                    </h3>
+                            </div>
+                        </div>
+                                <p>Esta é uma resenha do jogo. O jogo foi abandonado no Nintendo Switch. Aqui está um resumo da minha experiência...</p>
+                                <div class="rating">★★★★☆</div>
+
+
+                        </div>
+                    </div>
 
 
                 </div>
