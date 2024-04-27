@@ -66,7 +66,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
-    bottom:0px;
+    bottom:0%;
     }
 
     .left-buttons {
@@ -146,6 +146,7 @@
     }
     .review-box .game-cover {
     height: 100px;
+    width: auto;
     margin-right: 5px;
     border: none;
     }
@@ -287,7 +288,7 @@
 
     #search-container {
         position: relative;
-        width: 10%;
+        width: 60%;
         border: 2px solid #F4EEE0;
         border-radius: 20px;
         padding: 10px 10px 12px 4px;
@@ -336,7 +337,6 @@
 
     .review-box {
     display: flex;
-    width: 90%;
     height: 20%; 
     background-color: #2e2c37;
     border-radius: 10%; 
@@ -370,7 +370,7 @@
     }
     .review-box .rating {
         color: #e6a70d;
-        font-size: 22px; 
+        font-size: 28px; 
     }
     .int-body{
         display:grid;
@@ -401,8 +401,17 @@
     .review-box .review-text{
         display: flex;
         flex-direction: column;
+        height: 100%;
+        justify-content: space-evenly;
     }
 
+    .review-box .rectangle{
+        overflow: hidden;    
+    }
+    .review-box .interaction{
+        filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);
+
+    }
 
 
     .review-writer{
@@ -429,6 +438,16 @@
     ::-webkit-scrollbar-thumb:hover {
         background: #888; /
     }
+    .expand-button {
+            position: absolute; /* Posicione o botão em relação ao retângulo */
+            bottom: 10px; /* Distância do botão à parte inferior do retângulo */
+            right: 10px; /* Distância do botão à parte direita do retângulo */
+            background-color: transparent; /* Fundo transparente para as reticências */
+            color: #000; /* Cor das reticências */
+            border: none;
+            cursor: pointer;
+            font-size: 20px; 
+        }
 
 
 
@@ -444,7 +463,7 @@
             <div class="search-rect">
                 <div id="search-container">
                     <div>
-                        <input type="text" id="search-bar" >
+                        <input type="text" id="search-bar" placeholder="Pesquisar">
                         <button id="search-btn">
                             <i class="fa fa-search" alt="ícone de pesquisa" style="filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);"></i>
                         </button>
@@ -682,10 +701,24 @@
                                             </a>
                                         </h2>
                                   
+                                </div>
                             </div>
-                        </div>
+                            <div class="rectangle">
                                 <p>Esta é uma resenha do jogo. O jogo foi abandonado no Nintendo Switch. Aqui está um resumo da minha experiência...</p>
-                                <div class="rating">★★★★☆</div>
+                            </div>
+
+                            <div >
+                                <p class="rating">★★★★☆</p>
+                                <a href="#"><img class="icon"src="/like.png" alt="like"></a>
+
+                            
+                            
+                            </div>
+
+                            
+
+
+                            </div>
 
 
                         </div>
@@ -719,4 +752,17 @@
     </footer>
     
 </body>
+<script>
+    let expanded = false; 
+    function expandText() {
+        const rectangle = document.querySelector('.rectangle');
+        if (!expanded) {
+            rectangle.style.height = 'auto'; // Ajusta a altura para caber todo o texto
+            expanded = true;
+        } else {
+            rectangle.style.height = '300px'; // Volta à altura original
+            expanded = false;
+        }
+    }
+</script>
 </html>
