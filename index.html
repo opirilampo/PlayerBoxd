@@ -144,7 +144,7 @@
         border-radius: 6px;
         border: 1px solid transparent;
     }
-    .review-box .game-cover {
+    .reviewbox .game-cover {
     height: 100px;
     width: auto;
     margin-right: 5px;
@@ -172,7 +172,7 @@
         font-weight: bold;
         
     }
-    .review-box .username{
+    .reviewbox .username{
         color: #d5c6a1;
 
     }
@@ -205,7 +205,7 @@
 
     }
 
-    .review-box .owner{
+    .reviewbox .owner{
         font-family: Lucida Sans Typewriter;
         text-decoration: none;
         font-size: 10px;
@@ -335,7 +335,7 @@
         
     }
 
-    .review-box {
+    .reviewbox {
     display: flex;
     height: 20%; 
     background-color: #2e2c37;
@@ -348,10 +348,9 @@
     border-bottom: 1px solid #be9631;
     align-items: center;
     box-shadow: 0 16px 20px rgba(0,0,0,.1);
-
     }
 
-    .review-box .name-game {
+    .reviewbox .name-game {
     margin: 0;
     font-family: Lucida Sans Typewriter;
     font-weight: bold;
@@ -361,17 +360,14 @@
     }
 
     
-    .review-box p {
+    .reviewbox p {
         font-family: Lucida Sans Typewriter;
         text-decoration: none;
         font-size: 10px;
         color: #f0ede3;
         margin-top: 3px;
     }
-    .review-box .rating {
-        color: #e6a70d;
-        font-size: 28px; 
-    }
+
     .int-body{
         display:grid;
         grid-template-columns: 30% 40% 30%;
@@ -394,25 +390,40 @@
         flex-direction: column;
     }
 
-    .review-box .info{
+    .reviewbox .info{
         display: flex;
+        flex-direction: row;
+    }
+    .reviewbox .info2{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
     }
     
-    .review-box .review-text{
+    .reviewbox .review-text{
         display: flex;
         flex-direction: column;
         height: 100%;
         justify-content: space-evenly;
     }
 
-    .review-box .rectangle{
-        overflow: hidden;    
+    .reviewbox .rectangle{
+        overflow: hidden;   
+        max-height: 41%;
+        word-wrap: break-word;
     }
-    .review-box .interaction{
+    .reviewbox .interaction{
         filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);
+        height: 17px ;
 
     }
-
+    .likes {
+        font-family: Lucida Sans Typewriter;
+        text-decoration: none;
+        font-size: 10px;
+        color: #f0ede3;
+        padding: 0px;
+    }
 
     .review-writer{
         display: flex;
@@ -439,11 +450,7 @@
         background: #888; /
     }
     .expand-button {
-            position: absolute; /* Posicione o botão em relação ao retângulo */
-            bottom: 10px; /* Distância do botão à parte inferior do retângulo */
-            right: 10px; /* Distância do botão à parte direita do retângulo */
-            background-color: transparent; /* Fundo transparente para as reticências */
-            color: #000; /* Cor das reticências */
+            background-color: transparent;
             border: none;
             cursor: pointer;
             font-size: 20px; 
@@ -688,7 +695,7 @@
             <div class="internal-rect">
                 <div class="title">EM ALTA</div>
                 <div class="container">
-                    <div class="review-box">
+                    <div class="reviewbox" id="review-box">
                             <div><a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="game-cover"></a></div>
                         <div class="review-text">
                             <div class="info">
@@ -704,16 +711,23 @@
                                 </div>
                             </div>
                             <div class="rectangle">
-                                <p>Esta é uma resenha do jogo. O jogo foi abandonado no Nintendo Switch. Aqui está um resumo da minha experiência...</p>
+                                <p>Esta é uma resenha do jogo. O jogo foi abandonado no Nintendo Switch. A resenha do jogo. O jogo foi abandonado no Nintendo Switch. Aqui está um resu resenha do jogo. O jogo foi abandonado no Nintendo Switch. Aqui está um resu resenha do jogo. O jogo foi abandonado no Nintendo Switch. Aqui está um resu resenha do jogo. O jogo foi abandonado no Nintendo Switch. Aqui está um resuqui está um resumo da minha experiência...</p>
                             </div>
 
-                            <div >
-                                <p class="rating">★★★★☆</p>
-                                <a href="#"><img class="icon"src="/like.png" alt="like"></a>
+                            <div class="info2" >
+                                <div class="rating">★★★★☆</div>
+                                <div class="info">
+                                    <div class="info">
+                                        <a href="#"> <img class="interaction"src="https://icons.iconarchive.com/icons/custom-icon-design/mono-business-2/256/thumbs-up-icon.png" alt="like"></a>
+                                        <div class="likes">10 likes</div>
+                                    </div>
 
-                            
-                            
-                            </div>
+                                        <a href="#"> <img class="interaction"src="https://cdn-icons-png.flaticon.com/512/54/54916.png" alt="like"></a>
+
+                                        <button class="expand-button" onclick="expandText()"><img class="interaction"src="https://cdn-icons-png.flaticon.com/512/60/60781.png" alt="expand"></button>
+
+
+                                </div>
 
                             
 
@@ -753,16 +767,22 @@
     
 </body>
 <script>
-    let expanded = false; 
-    function expandText() {
-        const rectangle = document.querySelector('.rectangle');
-        if (!expanded) {
-            rectangle.style.height = 'auto'; // Ajusta a altura para caber todo o texto
-            expanded = true;
+    const reviewBox = document.getElementById('review-box');
+    const expandButton = reviewBox.querySelector('.expand-button');
+
+    let isExpanded = false;
+
+    // Função para alternar entre expandido e recolhido
+    function toggleExpand() {
+        if (isExpanded) {
+            reviewBox.style.height = '20%'; // Volta ao tamanho original
         } else {
-            rectangle.style.height = '300px'; // Volta à altura original
-            expanded = false;
+            reviewBox.style.height = 'auto'; // Expande
         }
+        isExpanded = !isExpanded;
     }
+
+    // Adiciona evento de clique ao botão "expand"
+    expandButton.addEventListener('click', toggleExpand);
 </script>
 </html>
