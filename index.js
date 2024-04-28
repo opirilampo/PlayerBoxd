@@ -5,7 +5,7 @@ let isExpanded = false;
 
 function toggleExpand() {
     if (isExpanded) {
-        reviewBox.style.height = '25%';
+        reviewBox.style.height = '22%';
         expandButton.classList.remove('img-expand');
     } else {
         reviewBox.style.height = 'auto';
