@@ -4,7 +4,12 @@ body {
 }
 .popular{
     margin-top: 20px;
+    width: 50%;
 }
+.popular-games{
+    width: 50%;
+}
+
 header {
 padding: 10px;
 width: 80%;
@@ -51,7 +56,7 @@ position: absolute;
 left: 50%;
 transform: translateX(-50%);
 width: 90%;
-bottom:0px;
+bottom:0%;
 }
 
 .left-buttons {
@@ -81,6 +86,7 @@ bottom:0px;
 
 .grid-container {
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 10px;
     column-gap: 10px;
@@ -91,6 +97,7 @@ bottom:0px;
 
 .grid-list{
     display: grid;
+    overflow-x: scroll;
     grid-template-rows: repeat(3, 1fr);
     justify-items: stretch;
     justify-content: space-evenly;
@@ -98,24 +105,24 @@ bottom:0px;
 }
 
 .card-stack{
+    display:flex;
+    flex-direction: column;
 }
 .covers {
-    display: flex;
-    flex-direction: row;
-    overflow: hidden; 
-    border-radius: 6px;
+display: flex;
+flex-direction: row;
+border-radius: 6px;
+overflow: hidden;
 }
 
+
 .card-cover {
-    width: auto;
-    height: 100px;
-    margin-right: -25px; 
-    padding: 0px;
+    width: 120%;
+    min-width: 50px;
+    height: auto;
     border-radius: 6px;
     border: 1px solid #f4eee01e;
     transition: transform 0.3s ease;
-    position: relative;
-    z-index: 1;
 }
 
 .card-cover:hover {
@@ -123,15 +130,15 @@ bottom:0px;
     z-index: 2;
 }
 .game-cover {
-    width: auto;
-    height: 120px;
+    width: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: 6px;
     border: 1px solid transparent;
-    margin-right: 10px;
 }
-.review-box .game-cover {
-height: 100px;
+.reviewbox .game-cover {
+height: 120px;
+width: auto;
 margin-right: 5px;
 border: none;
 }
@@ -157,8 +164,9 @@ border: none;
     font-weight: bold;
     
 }
-.review-box .username{
+.reviewbox .username{
     color: #d5c6a1;
+    font-size: 13px;
 
 }
 
@@ -190,18 +198,19 @@ border: none;
 
 }
 
-.review-box .owner{
+.reviewbox .owner{
     font-family: Lucida Sans Typewriter;
     text-decoration: none;
-    font-size: 10px;
+    font-size: 13px;
     color: #b6a375;
     margin-left: 5px;
-    margin-bottom: 0px;
+    margin-bottom: 3px;
 }
 .body-columns{
-    display: grid;
-    justify-content: end;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
 }
 
 
@@ -272,7 +281,7 @@ text-decoration: none;
 
 #search-container {
     position: relative;
-    width: 130px;
+    width: 60%;
     border: 2px solid #F4EEE0;
     border-radius: 20px;
     padding: 10px 10px 12px 4px;
@@ -313,48 +322,58 @@ input[type=text] {
 
 .container {
     width: 100%;
-    height: 690px;
+    height: 790px;
     overflow-y: scroll;
     border: 1px solid #000;
     
 }
 
-.review-box {
+.reviewbox {
 display: flex;
-width: 90%;
-height: 20%; 
+overflow-x: scroll;
+height: 25%;
+max-width: 100%;
 background-color: #2e2c37;
 border-radius: 10%; 
 color: #fff; 
-padding: 10px;
+padding: 5px;
+padding-bottom: 0px;
 margin-bottom: 10px; 
 border-left: 3px solid #be9631;
 border-top: 1px solid #be9631;
 border-bottom: 1px solid #be9631;
 align-items: center;
 box-shadow: 0 16px 20px rgba(0,0,0,.1);
-
 }
 
-.review-box h3 {
+.reviewbox .name-game {
 margin: 0;
 font-family: Lucida Sans Typewriter;
-font-size: 16px;
+font-weight: bold;
+font-size: 21px;
 color: #d5c6a1;
 text-decoration: underline;
+}
+.reviewbox .rating {
+    color: #e6a70d;
+    font-size: 28px;
+    margin-right: 25px;
+    -webkit-user-select:none;  
+    -moz-user-select:none;     
+    -ms-user-select:none;      
+    user-select:none;
+    margin-top: -5px; 
 
 }
-.review-box p {
+
+.reviewbox p {
     font-family: Lucida Sans Typewriter;
     text-decoration: none;
-    font-size: 10px;
+    font-size: 14px;
     color: #f0ede3;
     margin-top: 3px;
 }
-.review-box .rating {
-    color: #e6a70d;
-    font-size: 22px; 
-}
+
 .int-body{
     display:grid;
     grid-template-columns: 30% 40% 30%;
@@ -363,7 +382,7 @@ text-decoration: underline;
 .internal-rect{
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 65%;
 }
 
 .box{
@@ -377,16 +396,44 @@ text-decoration: underline;
     flex-direction: column;
 }
 
-.review-box .info{
+.reviewbox .info{
     display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.reviewbox .info2{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
 }
 
-.review-box .review-text{
+.reviewbox .review-text{
     display: flex;
     flex-direction: column;
+    gap: 3px;
+    height: 100%;
+    max-width: 100%;
 }
 
+.reviewbox .rectangle{
+    overflow: hidden;   
+    word-wrap: break-word;
+}
+.reviewbox .interaction{
+    filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);
+    height: 17px ;
+    margin-right: 5px;
 
+}
+.likes {
+    font-family: Lucida Sans Typewriter;
+    text-decoration: none;
+    font-size: 10px;
+    color: #f0ede3;
+    padding: 0px;
+    margin-right: 25px;
+    margin-top: -4px;
+}
 
 .review-writer{
     display: flex;
@@ -411,4 +458,17 @@ text-decoration: underline;
 
 ::-webkit-scrollbar-thumb:hover {
     background: #888; /
+}
+.reviewbox .expand-button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        margin-left: 20px;
+}
+
+.reviewbox .img-expand{
+    height: 13px ;
+    transform: rotate(180deg);
+    
+
 }
