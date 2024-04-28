@@ -1,11 +1,14 @@
 body {
+    align-self: center;
     background-color: #393646;
 }
 .popular{
-    width: 55%;
-
+    margin-top: 20px;
+    width: 50%;
 }
-
+.popular-games{
+    width: 50%;
+}
 
 header {
 padding: 10px;
@@ -86,30 +89,19 @@ bottom:0%;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 10px;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow-x: scroll;
     column-gap: 10px;
     justify-content: center;
     justify-items: center;
-    padding: 10px;
-    background-color: #343140;
-    box-shadow: 0px 1px 60px 0px #282631;
-    border-radius: 2%;
-    margin-bottom: 20px;
+    
 }
 
 .grid-list{
     display: grid;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow-x: scroll;
     grid-template-rows: repeat(3, 1fr);
     justify-items: stretch;
     justify-content: space-evenly;
-    padding: 10px;
-    background-color: #343140;
-    box-shadow: 0px 1px 60px 0px #282631;
-    border-radius: 2%;
-    max-width: 110%;
     
 }
 
@@ -140,7 +132,7 @@ overflow: hidden;
 }
 .game-cover {
     width: 100%;
-    min-width: 60px;
+    min-width: 50px;
     height: auto;
     object-fit: cover;
     border-radius: 6px;
@@ -163,7 +155,7 @@ border: none;
     font-size: 24px;
     color: #95845a;
     font-weight: bolder;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
 }
 .username{
     font-family: Lucida Sans Typewriter;
@@ -331,26 +323,29 @@ input[type=text] {
 }
 
 .container {
-    width: 95%;
-    padding-right: 0px;
-    padding: 10px;
-    background-color: #343140;
-    box-shadow: 0px 1px 60px 0px #282631;
-    border-radius: 2%;
-    max-height: 740px;
-    overflow-y: auto;
-    }
+    width: 100%;
+    height: 790px;
+    overflow-y: scroll;
+    border: 1px solid #000;
+    
+}
 
 .reviewbox {
 display: flex;
-overflow-x: auto;
+overflow-x: scroll;
 height: 22%;
 max-width: 100%;
+background-color: #2e2c37;
+border-radius: 10%; 
 color: #fff; 
 padding: 5px;
 padding-bottom: 0px;
 margin-bottom: 10px; 
+border-left: 3px solid #be9631;
+border-top: 1px solid #be9631;
+border-bottom: 1px solid #be9631;
 align-items: center;
+box-shadow: 0 16px 20px rgba(0,0,0,.1);
 }
 
 .reviewbox .name-game {
@@ -364,13 +359,14 @@ text-decoration: underline;
 .reviewbox .rating {
     color: #e6a70d;
     font-size: 30px;
+    margin-right: 25px;
     -webkit-user-select:none;  
     -moz-user-select:none;     
     -ms-user-select:none;      
     user-select:none;
     margin-top: -8px;
     margin-bottom: 8px;
-    margin-right: 25px;
+    margin-right: 15px;
 
 }
 
@@ -384,13 +380,13 @@ text-decoration: underline;
 
 .int-body{
     display:grid;
-    grid-template-columns: 32.5% 35% 32.5%;
+    grid-template-columns: 30% 40% 30%;
 }
 
 .internal-rect{
     display: flex;
     flex-direction: column;
-    width: 69%;
+    width: 65%;
 }
 
 .box{
@@ -425,8 +421,8 @@ text-decoration: underline;
 
 .reviewbox .rectangle{
     overflow: hidden;   
+    word-wrap: break-word;
     text-align: justify;
-
 }
 .reviewbox .interaction{
     filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);
@@ -451,29 +447,22 @@ text-decoration: underline;
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
-}
-::-webkit-scrollbar:hover {
-    width: 10px;
+    width: 10px; 
 }
 
 
 ::-webkit-scrollbar-track {
-    background: #2e2c37;
-
+    background: transparent; 
 }
 
 
 ::-webkit-scrollbar-thumb {
     background: transparent; 
-    border-radius: 12%;
-
 }
 
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #25242b; 
-
+    background: #888; /
 }
 .reviewbox .expand-button {
         background-color: transparent;
@@ -486,11 +475,4 @@ text-decoration: underline;
     transform: rotate(180deg);
     
 
-}
-
-.container .horizontal-line{
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-top: 1px solid #faf0db;
 }
