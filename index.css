@@ -89,6 +89,7 @@ bottom:0%;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 10px;
+    overflow-x: scroll;
     column-gap: 10px;
     justify-content: center;
     justify-items: center;
@@ -131,6 +132,7 @@ overflow: hidden;
 }
 .game-cover {
     width: 100%;
+    min-width: 50px;
     height: auto;
     object-fit: cover;
     border-radius: 6px;
@@ -166,7 +168,7 @@ border: none;
 }
 .reviewbox .username{
     color: #d5c6a1;
-    font-size: 13px;
+    font-size: 11px;
 
 }
 
@@ -201,7 +203,7 @@ border: none;
 .reviewbox .owner{
     font-family: Lucida Sans Typewriter;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 11px;
     color: #b6a375;
     margin-left: 5px;
     margin-bottom: 3px;
@@ -331,7 +333,7 @@ input[type=text] {
 .reviewbox {
 display: flex;
 overflow-x: scroll;
-height: 25%;
+height: 22%;
 max-width: 100%;
 background-color: #2e2c37;
 border-radius: 10%; 
@@ -350,26 +352,28 @@ box-shadow: 0 16px 20px rgba(0,0,0,.1);
 margin: 0;
 font-family: Lucida Sans Typewriter;
 font-weight: bold;
-font-size: 21px;
+font-size: 19px;
 color: #d5c6a1;
 text-decoration: underline;
 }
 .reviewbox .rating {
     color: #e6a70d;
-    font-size: 28px;
+    font-size: 30px;
     margin-right: 25px;
     -webkit-user-select:none;  
     -moz-user-select:none;     
     -ms-user-select:none;      
     user-select:none;
-    margin-top: -5px; 
+    margin-top: -8px;
+    margin-bottom: 8px;
+    margin-right: 15px;
 
 }
 
 .reviewbox p {
     font-family: Lucida Sans Typewriter;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 12px;
     color: #f0ede3;
     margin-top: 3px;
 }
@@ -418,6 +422,7 @@ text-decoration: underline;
 .reviewbox .rectangle{
     overflow: hidden;   
     word-wrap: break-word;
+    text-align: justify;
 }
 .reviewbox .interaction{
     filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);
@@ -431,7 +436,7 @@ text-decoration: underline;
     font-size: 10px;
     color: #f0ede3;
     padding: 0px;
-    margin-right: 25px;
+    margin-right: 15px;
     margin-top: -4px;
 }
 
@@ -463,7 +468,6 @@ text-decoration: underline;
         background-color: transparent;
         border: none;
         cursor: pointer;
-        margin-left: 20px;
 }
 
 .reviewbox .img-expand{
