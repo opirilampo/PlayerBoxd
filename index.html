@@ -107,6 +107,7 @@
 
     .grid-list{
         display: grid;
+        overflow-x: scroll;
         grid-template-rows: repeat(3, 1fr);
         justify-items: stretch;
         justify-content: space-evenly;
@@ -127,6 +128,7 @@
     
     .card-cover {
         width: 120%;
+        min-width: 50px;
         height: auto;
         border-radius: 6px;
         border: 1px solid #f4eee01e;
@@ -145,7 +147,7 @@
         border: 1px solid transparent;
     }
     .reviewbox .game-cover {
-    height: 100px;
+    height: 120px;
     width: auto;
     margin-right: 5px;
     border: none;
@@ -174,6 +176,7 @@
     }
     .reviewbox .username{
         color: #d5c6a1;
+        font-size: 13px;
 
     }
 
@@ -208,7 +211,7 @@
     .reviewbox .owner{
         font-family: Lucida Sans Typewriter;
         text-decoration: none;
-        font-size: 10px;
+        font-size: 13px;
         color: #b6a375;
         margin-left: 5px;
         margin-bottom: 3px;
@@ -337,11 +340,14 @@
 
     .reviewbox {
     display: flex;
-    height: 20%; 
+    overflow-x: scroll;
+    height: 25%;
+    max-width: 100%;
     background-color: #2e2c37;
     border-radius: 10%; 
     color: #fff; 
-    padding: 10px;
+    padding: 5px;
+    padding-bottom: 0px;
     margin-bottom: 10px; 
     border-left: 3px solid #be9631;
     border-top: 1px solid #be9631;
@@ -354,16 +360,26 @@
     margin: 0;
     font-family: Lucida Sans Typewriter;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 21px;
     color: #d5c6a1;
     text-decoration: underline;
     }
+    .reviewbox .rating {
+        color: #e6a70d;
+        font-size: 28px;
+        margin-right: 25px;
+        -webkit-user-select:none;  
+        -moz-user-select:none;     
+        -ms-user-select:none;      
+        user-select:none;
+        margin-top: -5px; 
 
+    }
     
     .reviewbox p {
         font-family: Lucida Sans Typewriter;
         text-decoration: none;
-        font-size: 10px;
+        font-size: 14px;
         color: #f0ede3;
         margin-top: 3px;
     }
@@ -393,6 +409,7 @@
     .reviewbox .info{
         display: flex;
         flex-direction: row;
+        align-items: center;
     }
     .reviewbox .info2{
         display: flex;
@@ -403,18 +420,19 @@
     .reviewbox .review-text{
         display: flex;
         flex-direction: column;
+        gap: 3px;
         height: 100%;
-        justify-content: space-evenly;
+        max-width: 100%;
     }
 
     .reviewbox .rectangle{
         overflow: hidden;   
-        max-height: 41%;
         word-wrap: break-word;
     }
     .reviewbox .interaction{
         filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);
         height: 17px ;
+        margin-right: 5px;
 
     }
     .likes {
@@ -423,6 +441,8 @@
         font-size: 10px;
         color: #f0ede3;
         padding: 0px;
+        margin-right: 10px;
+        margin-top: -4px;
     }
 
     .review-writer{
@@ -449,12 +469,20 @@
     ::-webkit-scrollbar-thumb:hover {
         background: #888; /
     }
-    .expand-button {
+    .reviewbox .expand-button {
             background-color: transparent;
             border: none;
             cursor: pointer;
-            font-size: 20px; 
-        }
+            margin-left: 20px;
+    }
+
+    .reviewbox .img-expand{
+        height: 13px ;
+        transform: rotate(180deg);
+        
+ 
+    }
+
 
 
 
@@ -698,7 +726,6 @@
                     <div class="reviewbox" id="review-box">
                             <div><a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="game-cover"></a></div>
                         <div class="review-text">
-                            <div class="info">
                                 <div class="review-writer">
                                     <a class="name-game" href="#">The Last Of Us </a>
                                         <h2 class="owner" >
@@ -709,10 +736,11 @@
                                         </h2>
                                   
                                 </div>
-                            </div>
                             <div class="rectangle">
                                 <p>Esta é uma resenha do jogo. O jogo foi abandonado no Nintendo Switch. A resenha do jogo. O jogo foi abandonado no Nintendo Switch. Aqui está um resu resenha do jogo. O jogo foi abandonado no Nintendo Switch. Aqui está um resu resenha do jogo. O jogo foi abandonado no Nintendo Switch. Aqui está um resu resenha do jogo. O jogo foi abandonado no Nintendo Switch. Aqui está um resuqui está um resumo da minha experiência...</p>
                             </div>
+
+                            <button class="expand-button" onclick="expandText()"><img class="img-expand" style="filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);" src="/expand.png" alt="expand"></button>
 
                             <div class="info2" >
                                 <div class="rating">★★★★☆</div>
@@ -723,17 +751,8 @@
                                     </div>
 
                                         <a href="#"> <img class="interaction"src="https://cdn-icons-png.flaticon.com/512/54/54916.png" alt="like"></a>
-
-                                        <button class="expand-button" onclick="expandText()"><img class="interaction"src="https://cdn-icons-png.flaticon.com/512/60/60781.png" alt="expand"></button>
-
-
                                 </div>
-
-                            
-
-
                             </div>
-
 
                         </div>
                     </div>
@@ -772,17 +791,17 @@
 
     let isExpanded = false;
 
-    // Função para alternar entre expandido e recolhido
     function toggleExpand() {
         if (isExpanded) {
-            reviewBox.style.height = '20%'; // Volta ao tamanho original
+            reviewBox.style.height = '25%';
+            expandButton.classList.remove('img-expand');
         } else {
-            reviewBox.style.height = 'auto'; // Expande
+            reviewBox.style.height = 'auto';
+            expandButton.classList.add('img-expand');
         }
         isExpanded = !isExpanded;
     }
 
-    // Adiciona evento de clique ao botão "expand"
     expandButton.addEventListener('click', toggleExpand);
 </script>
 </html>
