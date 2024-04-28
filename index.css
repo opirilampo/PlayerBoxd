@@ -86,6 +86,7 @@ bottom:0%;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 8px;
+    width: 90%;
     overflow-x: auto;
     overflow-y: hidden;
     justify-content: center;
@@ -94,7 +95,7 @@ bottom:0%;
     background-color: #343140;
     box-shadow: 0px 1px 60px 0px #282631;
     border-radius: 2%;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .grid-list{
@@ -108,7 +109,7 @@ bottom:0%;
     background-color: #343140;
     box-shadow: 0px 1px 60px 0px #282631;
     border-radius: 2%;
-    max-width: 110%;
+    width: 90%;
     
 }
 
@@ -138,7 +139,7 @@ overflow: hidden;
     z-index: 2;
 }
 .game-cover {
-    width: 90%;
+    width: 100%;
     min-width: 60px;
     height: auto;
     object-fit: cover;
@@ -162,7 +163,7 @@ border: none;
     font-size: 24px;
     color: #95845a;
     font-weight: bolder;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 .username{
     font-family: Lucida Sans Typewriter;
