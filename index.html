@@ -80,18 +80,24 @@ bottom:0%;
     transform: translateX(-50%);
 }
 
-.cont-img {
+#cont-img {
     opacity: 0.5;
     height: 600px;
+    width: 500px;
     border-radius: 2%;
+    background: url("https://www.candb.com/site/candb/images/artwork/dragonborn_skyrim_bethesda.jpg");
+    box-shadow: 15px 15px 15px  #393646 inset, -15px -15px 15px 0 #393646 inset; 
+    position: relative;
+    z-index: 1;
 }
 
 .central-img{
     display: flex;
-    justify-content: space-around;
-    grid-column: 2;
+    position: relative;
+    z-index: 1;
     
 }
+
 
 .grid-container {
     display: grid;
@@ -383,7 +389,7 @@ text-decoration: underline;
     user-select:none;
     margin-top: -8px;
     margin-bottom: 8px;
-    margin-right: 25px;
+    margin-right: 45px;
 
 }
 
@@ -506,6 +512,18 @@ text-decoration: underline;
     margin-top: 10px;
     margin-bottom: 10px;
     border-top: 1px solid #faf0db;
+}
+
+.quote{
+    position: relative;
+    z-index: 2;
+    border: none;
+    color:#D1BB9E;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight:bold;
+    font-family: Copperplate Gothic;
+    text-align: center; 
 }
 
 </style>
@@ -732,7 +750,9 @@ text-decoration: underline;
         
 
         <div class="central-img">
-            <img src="https://www.candb.com/site/candb/images/artwork/dragonborn_skyrim_bethesda.jpg" alt="Nome do Jogo" class="cont-img" >
+            <div class= "quote"> jhnonny bravo</div>
+            <div id="cont-img" ></div>
+        
         </div>
 
         <div class="box">
