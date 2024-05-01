@@ -37,6 +37,7 @@ margin-right: auto;
 .icon-container img {
     width: 25px;
     height: 25px;
+    margin-left: 10px;
 }
 
 #header .icon-container .vertical-line {
@@ -131,6 +132,7 @@ overflow: hidden;
 .card-cover {
     width: 120%;
     min-width: 50px;
+    max-height: 100px;
     height: auto;
     border-radius: 6px;
     border: 1px solid #f4eee01e;
@@ -143,15 +145,22 @@ overflow: hidden;
 }
 .game-cover {
     width: 100%;
+    height: 95%;
+    max-height: 130px;
     min-width: 60px;
-    height: auto;
     object-fit: cover;
     border-radius: 6px;
     border: 1px solid transparent;
+    transition: transform 0.3s ease;
+}
+
+.game-cover:hover{
+    transform: scale(1.1);
 }
 .reviewbox .game-cover {
 height: 120px;
 width: auto;
+max-width: 90px;
 margin-right: 5px;
 border: none;
 }
@@ -253,34 +262,44 @@ border: none;
 color: inherit; 
 text-decoration: none; 
 }
+.container .button{
+    display: flex;
+    justify-content: center;
+    color: #F4EEE0;
+}
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+    }
 
 .dropdown-content {
     display: none;
     position: absolute;
     outline: none;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 0px 2px 0px #F4EEE0;
-    z-index: 1;
+    background-color: #c3c2c7;
+    min-width: 150px;
+    box-shadow: 0px 0px 2px 0px #c3c2c7;
+    z-index: 99;
     border-radius: 20px;
 
 }
 
 .dropdown-content a {
-    color: black;
+    color: #322b23;
+    font-family: Lucida Sans Typewriter;
+    font-size: 14px;
     padding: 12px 16px;
     text-decoration: none;
-    display: block;
+    display: flex;
     border-radius: 20px;
-    
-
+    justify-content: center;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
-    
 }
+
 
 #header .logo {
     border: none;
@@ -363,6 +382,7 @@ font-family: Lucida Sans Typewriter;
 font-weight: bold;
 font-size: 19px;
 color: #d5c6a1;
+text-align: center;
 text-decoration: underline;
 }
 .reviewbox .rating {
