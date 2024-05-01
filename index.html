@@ -1141,12 +1141,12 @@ form .inputs{
     
 </body>
 <script>
-    const reviewBox = document.getElementById('review-box');
-    const expandButton = reviewBox.querySelector('.expand-button');
-
-    let isExpanded = false;
 
     function toggleExpand() {
+        const reviewBox = document.getElementById('review-box');
+        const expandButton = reviewBox.querySelector('.expand-button');
+        let isExpanded = false;
+
         if (isExpanded) {
             reviewBox.style.height = '22%';
             expandButton.classList.remove('img-expand');
