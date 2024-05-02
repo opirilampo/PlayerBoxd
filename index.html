@@ -721,7 +721,7 @@ form .inputs{
 
             <div class="icon-container">
                 <div class="vertical-line"></div>
-                <button id="openModal" class="expand-button"><img class="icon"src="https://cdn-icons-png.freepik.com/256/1144/1144760.png" alt="Pessoa"></button>
+                <button id="openModal" onclick="openLogin()" class="expand-button"><img class="icon"src="https://cdn-icons-png.freepik.com/256/1144/1144760.png" alt="Pessoa"></button>
                 <div id="modal" class="modal">
                     <div class="modal-content">
                         <div class="review-writer">
@@ -950,7 +950,7 @@ form .inputs{
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             </div>
 
-                            <button class="expand-button" onclick="expandText()"><img class="img-expand" style="filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);" src="/expand.png" alt="expand"></button>
+                            <button class="expand-button" onclick="toggleExpand()"><img class="img-expand" style="filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);" src="/expand.png" alt="expand"></button>
 
                             <div class="info2" >
                                 <div class="rating">★★★★☆</div>
@@ -986,7 +986,7 @@ form .inputs{
                             <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
 
-                        <button class="expand-button" onclick="expandText()"><img class="img-expand" style="filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);" src="/expand.png" alt="expand"></button>
+                        <button class="expand-button" onclick="toggleExpand()"><img class="img-expand" style="filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);" src="/expand.png" alt="expand"></button>
 
                         <div class="info2" >
                             <div class="rating">★★★★☆</div>
@@ -1022,7 +1022,7 @@ form .inputs{
                             <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
 
-                        <button class="expand-button" onclick="expandText()"><img class="img-expand" style="filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);" src="/expand.png" alt="expand"></button>
+                        <button class="expand-button" onclick="toggleExpand()"><img class="img-expand" style="filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);" src="/expand.png" alt="expand"></button>
 
                         <div class="info2" >
                             <div class="rating">★★★★☆</div>
@@ -1058,7 +1058,7 @@ form .inputs{
                             <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
 
-                        <button class="expand-button" onclick="expandText()"><img class="img-expand" style="filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);" src="/expand.png" alt="expand"></button>
+                        <button class="expand-button" onclick="toggleExpand()"><img class="img-expand" style="filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);" src="/expand.png" alt="expand"></button>
 
                         <div class="info2" >
                             <div class="rating">★★★★☆</div>
@@ -1142,24 +1142,42 @@ form .inputs{
 </body>
 <script>
 
-    function toggleExpand() {
-        const reviewBox = document.getElementById('review-box');
-        const expandButton = reviewBox.querySelector('.expand-button');
+    const expandButtons = document.querySelectorAll('.expand-button');
+
+    expandButtons.forEach((expandButton) => {
+        const reviewBox = expandButton.closest('.reviewbox');
         let isExpanded = false;
 
-        if (isExpanded) {
-            reviewBox.style.height = '22%';
-            expandButton.classList.remove('img-expand');
-        } else {
-            reviewBox.style.height = 'auto';
-            expandButton.classList.add('img-expand');
+        function toggleExpand() {
+            if (isExpanded) {
+                reviewBox.style.height = '22%';
+                expandButton.classList.remove('img-expand');
+            } else {
+                reviewBox.style.height = 'auto';
+                expandButton.classList.add('img-expand');
+            }
+            isExpanded = !isExpanded;
         }
-        isExpanded = !isExpanded;
+
+        expandButton.addEventListener('click', toggleExpand);
+    });
+
+
+
+    function openLogin() {
+    const openModalButton = document.getElementById('openModal');
+    const closeModalButton = document.getElementById('closeModal');
+    const modal = document.getElementById('modal');
+
+    openModalButton.addEventListener('click', () => {
+        modal.style.display = 'flex';
+    });
+
+    closeModalButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
     }
-
-    expandButton.addEventListener('click', toggleExpand);
-
-
 
     const openModalButton = document.getElementById('openModal');
     const closeModalButton = document.getElementById('closeModal');
