@@ -8,659 +8,751 @@
     
 </head>
 <style>
-body {
-    background-color: #393646;
-}
-.popular{
-    width: 55%;
+    body {
+        background-color: #393646;
+    }
+    .popular{
+        width: 62%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    header {
+        display: grid;
+        grid-template-columns: 45% 10% 45%;
+        padding: 10px;
+        width: 80%;
+        text-align: center;
+        border-bottom: 1px dotted #faf0db;
+        margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #header .header-content {
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        align-items: center;
+        justify-content: space-around;
+        justify-items: center;
+    }
+
+    .icon-container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .icon-container img {
+        filter: invert(90%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);
+
+        margin-left: 10px;
+    }
+    #header .icone{
+        width: 35px;
+        height: 35px;
+    }
+    #header .small-icon{
+        width: 25px;
+        height: 25px;
+    }
+
+    #header .icon-container .vertical-line {
+        height: 30px;
+        border-left: 1px solid #faf0db;
+    }
+
+
+    footer {
+    border-top: 1px solid #faf0db;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-}
-
-
-header {
-    display: grid;
-    grid-template-columns: 45% 10% 45%;
     padding: 10px;
-    width: 80%;
-    text-align: center;
-    border-bottom: 1px dotted #faf0db;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#header .header-content {
-    display:grid;
-    grid-template-columns: repeat(3,1fr);
-    align-items: center;
-    justify-content: space-around;
-}
-#header .icon {
-    filter: invert(90%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);
-}
-
-.icon-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.icon-container img {
-    width: 25px;
-    height: 25px;
-    margin-left: 10px;
-}
-
-#header .icon-container .vertical-line {
-    height: 30px;
-    border-left: 1px solid #faf0db;
-}
-
-
-footer {
-border-top: 1px solid #faf0db;
-display: flex;
-justify-content: center; /* Centraliza horizontalmente */
-align-items: center;
-padding: 10px;
-position: absolute;
-left: 50%;
-transform: translateX(-50%);
-width: 90%;
-bottom:0%;
-}
-
-.left-buttons {
-    margin-right: auto;
-}
-.right-buttons {
-    margin-left: auto;
-}
-.center-button {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-}
-
-#cont-img {
-    opacity: 0.5;
-    height: 750px;
-    border-radius: 2%;
-    position: absolute;
-}
-
-.central-img{
-    display: flex;
-    justify-content: center;
-    
-}
-
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 8px;
     width: 90%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    justify-content: center;
-    justify-items: center;
-    padding: 10px;
-    background-color: #343140;
-    box-shadow: 0px 0px 10px 0px #282631;
-    border-radius: 3%;
-    margin-bottom: 10px;
-}
-
-.grid-list{
-    display: grid;
-    overflow-x: auto;
-    overflow-y: hidden;
-    grid-template-rows: repeat(3, 1fr);
-    justify-items: stretch;
-    justify-content: space-evenly;
-    padding: 10px;
-    background-color: #343140;
-    box-shadow: 0px 0px 10px 0px #282631;
-    border-radius: 3%;
-    width: 90%;
-    
-}
-
-.card-stack{
-    display:flex;
-    flex-direction: column;
-}
-.covers {
-display: flex;
-flex-direction: row;
-border-radius: 6px;
-overflow: hidden;
-}
-
-
-.card-cover {
-    width: 120%;
-    min-width: 50px;
-    max-height: 100px;
-    height: auto;
-    border-radius: 6px;
-    border: 1px solid #f4eee01e;
-    transition: transform 0.3s ease;
-}
-
-.card-cover:hover {
-    transform: scale(1.1);
-    z-index: 2;
-}
-.game-cover {
-    width: 100%;
-    height: 95%;
-    max-height: 130px;
-    min-width: 60px;
-    object-fit: cover;
-    border-radius: 6px;
-    border: 1px solid transparent;
-    transition: transform 0.3s ease;
-}
-
-.game-cover:hover{
-    transform: scale(1.1);
-}
-.reviewbox .game-cover {
-height: 120px;
-width: auto;
-max-width: 90px;
-margin-right: 15px;
-border: none;
-}
-
-.game-cover:hover {
-    border-color: #F4EEE0;
-    transition: border-color 0.3s ease;
-}
-.title {
-    text-align: center;
-    font-family: Lucida Sans Typewriter;
-    font-size: 24px;
-    color: #95845a;
-    font-weight: bolder;
-    margin-bottom: 5px;
-}
-.username{
-    font-family: Lucida Sans Typewriter;
-    text-decoration: none;
-    font-size: 10px;
-    color: #b6a375;
-    margin-top: 0px;
-    font-weight: bold;
-    
-}
-.reviewbox .username{
-    color: #d5c6a1;
-    font-size: 11px;
-
-}
-
-.username:hover{
-    color: inherit; 
-    text-decoration: none; 
-}
-
-.secondary-link{
-    font-family: Lucida Sans Typewriter;
-    text-decoration: none;
-    font-size: 14px;
-    color: #F4EEE0;
-    font-weight: bold;
-    margin-bottom: 0 px;
-}
-
-.secondary-link:hover{
-    color: inherit; 
-    text-decoration: none; 
-}
-
-.grid-list p{
-    font-family: Lucida Sans Typewriter;
-    text-decoration: none;
-    font-size: 10px;
-    color: #d5c6a1;
-    margin-top: 5px;
-    margin-bottom: 5px;
-
-}
-
-.reviewbox .owner{
-    font-family: Lucida Sans Typewriter;
-    text-decoration: none;
-    font-size: 11px;
-    color: #b6a375;
-    margin-left: 5px;
-    margin-bottom: 3px;
-}
-.body-columns{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-end;
-}
-
-
-#header .button {
-    border: none;
-    color: #F4EEE0;
-    margin-top: 10px;
-    padding: 10px;
-    text-align: center;
-    font-family: Lucida Sans Typewriter;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.button {
-    border: none;
-    color: #95845a;
-    align-content: end;
-    padding: 10px 10px 10px;
-    font-family: Lucida Sans Typewriter;
-    text-decoration: none;
-    bottom: 0%;
-    font-size: 18px;
-}
-
-.button:hover {
-color: inherit; 
-text-decoration: none; 
-}
-.container .button{
-    display: flex;
-    justify-content: center;
-    color: #F4EEE0;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
+    bottom:0%;
     }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    outline: none;
-    background-color: #c3c2c7;
-    min-width: 150px;
-    box-shadow: 0px 0px 2px 0px #c3c2c7;
-    z-index: 99;
-    border-radius: 20px;
+    .left-buttons {
+        margin-right: auto;
+    }
+    .right-buttons {
+        margin-left: auto;
+    }
+    .center-button {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
-}
+    #cont-img {
+        opacity: 0.5;
+        width: 100%;
+        border-radius: 2%;
+        min-width: 300px;
+        }
 
-.dropdown-content a {
-    color: #322b23;
-    font-family: Lucida Sans Typewriter;
-    font-size: 14px;
-    padding: 12px 16px;
-    text-decoration: none;
+    .central-img{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 8px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        justify-content: center;
+        justify-items: center;
+        padding: 10px;
+        background-color: #343140;
+        box-shadow: 0px 0px 10px 0px #282631;
+        border-radius: 3%;
+        margin-bottom: 10px;
+    }
+
+    .grid-list{
+        display: grid;
+        overflow-x: auto;
+        overflow-y: hidden;
+        grid-template-rows: repeat(3, 1fr);
+        justify-items: stretch;
+        justify-content: space-evenly;
+        padding: 10px;
+        background-color: #343140;
+        box-shadow: 0px 0px 10px 0px #282631;
+        border-radius: 3%;
+        width: 74%;
+        
+    }
+
+    .card-stack{
+        display:flex;
+        flex-direction: column;
+    }
+
+    .covers {
     display: flex;
-    border-radius: 20px;
-    justify-content: center;
-}
+    flex-direction: row;
+    border-radius: 6px;
+    overflow: hidden;
+    }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-
-#header .logo {
-    border: none;
-    color:#D1BB9E;
-    text-decoration: none;
-    font-size: 25px;
-    font-weight:bold;
-    font-family: Copperplate Gothic;
-    text-align: center; 
-}
-
-#search-container {
-    position: relative;
-    width: 70%;
-    border: 2px solid #F4EEE0;
-    border-radius: 20px;
-    padding: 10px 10px 12px 4px;
-    -webkit-transition: width 1.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}
-
-#search-container:focus-within {
+    .card-cover {
         width: 120%;
-}
-
-#header .search-rect{
-    width: 80%;
-    height: auto;
-}
-
-#header .search-input {
-    font-size: 16px;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    width: 80%;
-}
-
-#search-btn {
-    position: absolute;
-    right: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-    border: none;
-    background: none;
-    cursor: pointer;
-}
-
-
-#search-btn i {
-    font-size: 20px;
-}
-
-.container {
-    width: 95%;
-    padding-right: 0px;
-    padding: 10px;
-    background-color: #343140;
-    box-shadow: 0px 0px 10px 0px #282631;
-    border-radius: 3%;
-    height: 740px;
-    overflow-y: auto;
+        min-width: 50px;
+        max-height: 100px;
+        height: auto;
+        border-radius: 6px;
+        border: 1px solid #f4eee01e;
+        transition: transform 0.3s ease;
     }
 
-.reviewbox {
-display: flex;
-overflow-x: auto;
-height: 22%;
-max-width: 100%;
-color: #fff; 
-padding: 5px;
-padding-bottom: 0px;
-margin-bottom: 10px; 
-align-items: center;
-}
+    .card-cover:hover {
+        transform: scale(1.1);
+        z-index: 2;
+    }
 
-.reviewbox .name-game {
-margin: 0;
-font-family: Lucida Sans Typewriter;
-font-weight: bold;
-font-size: 19px;
-color: #d5c6a1;
-text-align: center;
-text-decoration: underline;
-}
-.reviewbox .rating {
-    color: #e6a70d;
-    font-size: 30px;
-    -webkit-user-select:none;  
-    -moz-user-select:none;     
-    -ms-user-select:none;      
-    user-select:none;
-    margin-top: -8px;
-    margin-bottom: 8px;
-    margin-right: 45px;
+    .game-cover {
+        width: 100%;
+        height: 95%;
+        max-height: 130px;
+        min-width: 60px;
+        object-fit: cover;
+        border-radius: 6px;
+        border: 1px solid transparent;
+        transition: transform 0.3s ease;
+    }
 
-}
+    .game-cover:hover{
+        transform: scale(1.1);
+    }
 
-.reviewbox p {
-    font-family: Lucida Sans Typewriter;
-    text-decoration: none;
-    font-size: 12px;
-    color: #f0ede3;
-    margin-top: 3px;
-}
-
-.int-body{
-    display:grid;
-    grid-template-columns: 32.5% 35% 32.5%;
-}
-
-.internal-rect{
-    display: flex;
-    flex-direction: column;
-    width: 69%;
-}
-
-.box{
-    display:flex;
-    justify-content: start;
-    align-items: flex-start;
-}
-
-.review-info{
-    display: flex;
-    flex-direction: column;
-}
-
-.reviewbox .info{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.reviewbox .info2{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-}
-
-.reviewbox .review-text{
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    height: 100%;
-    max-width: 100%;
-}
-
-.reviewbox .rectangle{
-    overflow: hidden;   
-    text-align: justify;
-
-}
-.reviewbox .interaction{
-    filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);
-    height: 17px ;
-    margin-right: 5px;
-
-}
-.likes {
-    font-family: Lucida Sans Typewriter;
-    text-decoration: none;
-    font-size: 10px;
-    color: #f0ede3;
-    padding: 0px;
+    .reviewbox .game-cover {
+    height: 120px;
+    width: auto;
+    max-width: 90px;
     margin-right: 15px;
-    margin-top: -4px;
-}
+    border: none;
+    }
 
-.review-writer{
-    display: flex;
-    align-items: center;
+    .game-cover:hover {
+        border-color: #F4EEE0;
+        transition: border-color 0.3s ease;
+    }
 
-}
+    .title {
+        text-align: center;
+        font-family: Lucida Sans Typewriter;
+        font-size: 24px;
+        color: #95845a;
+        font-weight: bolder;
+        margin-bottom: 5px;
+    }
 
-::-webkit-scrollbar {
-    width: 10px;
-}
-::-webkit-scrollbar:hover {
-    width: 10px;
-}
+    .username{
+        font-family: Lucida Sans Typewriter;
+        text-decoration: none;
+        font-size: 10px;
+        color: #b6a375;
+        margin-top: 0px;
+        font-weight: bold;
+    }
+
+    .reviewbox .username{
+        color: #d5c6a1;
+        font-size: 11px;
+    }
+
+    .username:hover{
+        color: inherit; 
+        text-decoration: none; 
+    }
+
+    .secondary-link{
+        font-family: Lucida Sans Typewriter;
+        text-decoration: none;
+        font-size: 14px;
+        color: #F4EEE0;
+        font-weight: bold;
+        margin-bottom: 0 px;
+    }
+
+    .secondary-link:hover{
+        color: inherit; 
+        text-decoration: none; 
+    }
+
+    .grid-list p{
+        font-family: Lucida Sans Typewriter;
+        text-decoration: none;
+        font-size: 10px;
+        color: #d5c6a1;
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+    }
+
+    .reviewbox .owner{
+        font-family: Lucida Sans Typewriter;
+        text-decoration: none;
+        font-size: 11px;
+        color: #b6a375;
+        margin-left: 5px;
+        margin-bottom: 3px;
+    }
+
+    .body-columns{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    #header .button {
+        border: none;
+        color: #F4EEE0;
+        margin-top: 10px;
+        padding: 10px;
+        text-align: center;
+        font-family: Lucida Sans Typewriter;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    #area .theButton {
+        display: none;
+        border: 1px solid;
+        border-radius: 15px;
+        color: #F4EEE0;
+        background-color: transparent;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        text-align: center;
+        font-family: Lucida Sans Typewriter;
+        text-decoration: underline;
+        font-size: 15px;
+        cursor:pointer;
+    }
+
+    .button {
+        border: none;
+        color: #95845a;
+        align-content: end;
+        padding: 10px 10px 10px;
+        font-family: Lucida Sans Typewriter;
+        text-decoration: none;
+        bottom: 0%;
+        font-size: 18px;
+    }
+
+    .button:hover {
+        color: inherit; 
+        text-decoration: none; 
+    }
+
+    .container .button{
+        display: flex;
+        justify-content: center;
+        color: #F4EEE0;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        outline: none;
+        background-color: #c3c2c7;
+        min-width: 150px;
+        box-shadow: 0px 0px 2px 0px #c3c2c7;
+        z-index: 99;
+        border-radius: 20px;
+    }
+
+    .dropdown-content a {
+        color: #322b23;
+        font-family: Lucida Sans Typewriter;
+        font-size: 14px;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: flex;
+        border-radius: 20px;
+        justify-content: center;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    #header .logo {
+        border: none;
+        color:#D1BB9E;
+        text-decoration: none;
+        font-size: 25px;
+        font-weight:bold;
+        font-family: Copperplate Gothic;
+        text-align: center; 
+    }
+
+    #search-container {
+        position: relative;
+        width: 70%;
+        border: 2px solid #F4EEE0;
+        border-radius: 20px;
+        padding: 10px 10px 12px 4px;
+        -webkit-transition: width 1.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+    }
+
+    #search-container:focus-within {
+        width: 120%;
+    }
+
+    #header .search-rect{
+        width: 80%;
+        height: auto;
+    }
+
+    #header .search-input {
+        font-size: 16px;
+        background-color: transparent;
+        border: none;
+        color: white;
+        outline: none;
+        width: 80%;
+        display: flex;
+    }
+
+    #search-btn {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
 
 
-::-webkit-scrollbar-track {
-    background: #2e2c37;
+    #search-btn i {
+        font-size: 20px;
+    }
 
-}
+    .container {
+        width: 95%;
+        padding-right: 0px;
+        padding: 10px;
+        background-color: #343140;
+        box-shadow: 0px 0px 10px 0px #282631;
+        border-radius: 3%;
+        height: 740px;
+        overflow-y: auto;
+    }
 
+    .reviewbox {
+        display: flex;
+        overflow-x: auto;
+        height: 22%;
+        max-width: 100%;
+        color: #fff; 
+        padding: 5px;
+        padding-bottom: 0px;
+        margin-bottom: 10px; 
+        align-items: center;
+    }
 
-::-webkit-scrollbar-thumb {
-    background: transparent; 
-    border-radius: 12%;
+    .reviewbox .name-game {
+        margin: 0;
+        font-family: Lucida Sans Typewriter;
+        font-weight: bold;
+        font-size: 19px;
+        color: #d5c6a1;
+        text-align: center;
+        text-decoration: underline;
+    }
 
-}
+    .reviewbox .rating {
+        color: #e6a70d;
+        font-size: 30px;
+        -webkit-user-select:none;  
+        -moz-user-select:none;     
+        -ms-user-select:none;      
+        user-select:none;
+        margin-top: -8px;
+        margin-bottom: 8px;
+        margin-right: 45px;
 
+    }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #25242b; 
+    .reviewbox p {
+        font-family: Lucida Sans Typewriter;
+        text-decoration: none;
+        font-size: 12px;
+        color: #f0ede3;
+        margin-top: 3px;
+    }
 
-}
-.expand-button {
+    .int-body{
+        display:grid;
+        grid-template-columns: 37.5% 25% 37.5%;
+    }
+
+    .internal-rect{
+        display: flex;
+        flex-direction: column;
+        width: 69%;
+    }
+
+    .box{
+        display:flex;
+        justify-content: start;
+        align-items: flex-start;
+    }
+
+    .review-info{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .reviewbox .info{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .reviewbox .info2{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    .reviewbox .review-text{
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        height: 100%;
+        max-width: 100%;
+    }
+
+    .reviewbox .rectangle{
+        overflow: hidden;   
+        text-align: justify;
+
+    }
+
+    .reviewbox .interaction{
+        filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);
+        height: 17px ;
+        margin-right: 5px;
+
+    }
+
+    .likes {
+        font-family: Lucida Sans Typewriter;
+        text-decoration: none;
+        font-size: 10px;
+        color: #f0ede3;
+        padding: 0px;
+        margin-right: 15px;
+        margin-top: -4px;
+    }
+
+    .review-writer{
+        display: flex;
+        align-items: center;
+
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar:hover {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #2e2c37;
+
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: transparent; 
+        border-radius: 15px;
+
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #25242b; 
+
+    }
+
+    .expand-button {
         background-color: transparent;
         border: none;
         cursor: pointer;
-}
+    }
 
-.reviewbox .img-expand{
-    height: 13px ;
-    transform: rotate(180deg);
-    
+    .reviewbox .img-expand{
+        height: 13px ;
+        transform: rotate(180deg);
+    }
 
-}
+    .container .horizontal-line{
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-top: 1px solid #faf0db;
+    }
 
-.container .horizontal-line{
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-top: 1px solid #faf0db;
-}
+    .quote{
+        position: absolute;
+        top: 70%;
+        z-index: 2;
+        border: none;
+        color:#D1BB9E;
+        font-size: 23px;
+        font-weight:bold;
+        font-family: Copperplate Gothic;
+        text-align: center;
+        line-height: 35px;
+    }
 
-.quote{
-    position: absolute;
-    top: 70%;
-    z-index: 2;
-    border: none;
-    color:#D1BB9E;
-    font-size: 25px;
-    font-weight:bold;
-    font-family: Copperplate Gothic;
-    text-align: center;
-    line-height: 35px;
-}
-.little{
-    display: flex;
-    align-items: flex-end;
-    font-family: Copperplate Gothic;
-    color: #F4EEE0;
-    font-size: 20px;
-    margin-bottom: 8%;
-}
+    .little{
+        display: flex;
+        align-items: flex-end;
+        font-family: Copperplate Gothic;
+        color: #F4EEE0;
+        text-align: center;
+        font-size: 20px;
+        margin-bottom: 8%;
+    }
 
-.modal-content .review-writer{
-    justify-content: space-between;
-}
-.modal-content .icon{
-    height: 20px;
-    width: auto;
-    
-}
+    #header .review-writer{
+        justify-content: space-between;
+    }
 
-.modal {
-    display: none;
-    z-index: 999;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-}
+    .modal-content .icon{
+        height: 20px;
+        width: auto;
+        
+    }
 
-.modal-content {
-    display: flex;
-    flex-direction: column;
-    background-color: #393646;
-    width: 450px;
-    height: 450px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.modal-content p{
-    font-family: Copperplate Gothic;
-    color: #faf0db;
-    font-size: 18px;
-    margin: 8px;
-}
-
-.modal-content h1{
-    font-family: Copperplate Gothic;
-    color: #d5c6a1;
-    font-size: 25px;
-    margin: 8px;
-    display: flex;
-    justify-content: center;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-
-form .inputs{
-    height: 20px;
-    margin-bottom: 10px;
-    border-radius: 20px;
-    width: 75%;
-    font-family: Lucida Sans Typewriter;
-    font-size: 12px;
-    outline: none;
-    color: white;
-    background-color: transparent;
-    border: 2px solid #95845a;
-}
-::-ms-reveal {
-  filter: invert(100%);
-}
-::-ms-reveal:hover {
-  display: block;
-}
+    .modal {
+        z-index: 999;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+    }
 
 
 
-.modal-content .create{
-    background-color: #F4EEE0;
-    border-radius: 10%;
-    padding:5px;
-    font-family: Copperplate Gothic;
-    font-size: 15px;
-    border: 2px solid transparent;
-    transition: border-color 0.3s ease;
-    margin-top: 15px;
+    #header .modal-content {
+        display: flex;
+        flex-direction: column;
+        background-color: #393646;
+        width: 450px;
+        height: 450px;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
 
-}
+    #header #new-reviewModal{
+        display: flex;
+        align-items: flex-start;
+        background-color: #22202a;
+        width: 500px;
+        height: 500px;
+        border-radius: 8px;
+        padding: 10px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
 
-.modal-content .create:hover {
-    border-color: #95845a;
-    transition: border-color 0.3s ease;
-}
+    #header #reviewModal{
+        background-color: transparent;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
 
+    #header #reviewBody{
+        display: flex;
+        flex-direction: row;
 
-.modal-content .box-terms{
-    display: flex;
-    align-items: center;
-}
-.modal-content .terms{
-    font-family: Copperplate Gothic;
-    color: #faf0db;
-    font-size: 13px;
-    margin-top: 1px;
+    }
 
-}
+    .modal-content p{
+        font-family: Copperplate Gothic;
+        color: #faf0db;
+        font-size: 18px;
+        margin: 8px;
+    }
 
+    #header .review-writer h1{
+        font-family: Copperplate Gothic;
+        color: #d5c6a1;
+        font-size: 25px;
+        margin: 8px;
+        display: flex;
+        justify-content: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .inputs{
+        height: 20px;
+        margin-bottom: 10px;
+        border-radius: 20px;
+        width: 75%;
+        font-family: Lucida Sans Typewriter;
+        font-size: 12px;
+        outline: none;
+        color: white;
+        background-color: transparent;
+        border: 2px solid #95845a;
+    }
+
+    #theLogin .inputs{
+        margin-bottom: 0px;
+        height: 18px;
+    }
+
+    ::-ms-reveal {
+    filter: invert(100%);
+    }
+
+    ::-ms-reveal:hover {
+    display: block;
+    }
+
+    #header .create{
+        background-color: #F4EEE0;
+        border-radius: 10px;
+        padding:5px;
+        font-family: Copperplate Gothic;
+        font-size: 15px;
+        border: 2px solid transparent;
+        transition: border-color 0.3s ease;
+        margin-top: 15px;
+    }
+
+    #header .create:hover {
+        border-color: #95845a;
+        transition: border-color 0.3s ease;
+    }
+
+    .modal-content .box-terms{
+        display: flex;
+        align-items: center;
+    }
+
+    .modal-content .terms{
+        font-family: Copperplate Gothic;
+        color: #faf0db;
+        font-size: 13px;
+        margin-top: 1px;
+
+    }
+
+    #header .login{
+        display: none;
+        flex-direction: row;
+    }
+
+    #theLogin p{
+        font-family: Lucida Sans Typewriter;
+        text-decoration: none;
+        font-size: 12px;
+        color: #f0ede3;
+        margin-top: 3px;
+        margin-bottom: 2px;
+    }
+
+    #header .individual {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        min-width:40%;
+    }
+
+    #header #leftMar{
+        margin-left: 30px;
+    }
+
+    #header .forgot{
+        font-family: Lucida Sans Typewriter;
+        font-size: 10px;
+        margin-left: 5px;
+        margin-top: 2px;
+        color: #d5c6a1;
+        outline: none;
+        text-decoration: none;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
 
 </style>
 <body >
@@ -700,8 +792,9 @@ form .inputs{
                 <a href="#" class="logo">PLAYER<br>BOXD</a>
             </div>
 
-        <div class="header-content">
-            <div class="dropdown">
+            <div class="header-content" id="area">
+            
+            <div class="dropdown" id="d1">
                 <a href="#" class="button">LISTA</a>
                 <div class="dropdown-content">
                     <a href="#">Mais curtidas</a>
@@ -710,7 +803,7 @@ form .inputs{
                 </div>
             </div>
 
-            <div class="dropdown">
+            <div class="dropdown" id="d2">
                 <a href="#" class="button">SUA ATIVIDADE</a>
                 <div class="dropdown-content">
                     <a href="#">Reviews</a>
@@ -719,14 +812,36 @@ form .inputs{
                 </div>
             </div>
 
+            <button onclick="openSingIn()"  id= "hiddenButton1" class="theButton">Login</button>
+            <button onclick="openSingUp()" id = "hiddenButton2" class="theButton">Criar conta</button>
+
+            <form class="login" id="theLogin">
+                <div class="individual" id="leftMar">
+                    <p>Username:</p>
+                    <input type="text" class="inputs" id="usernameLogin" required="">
+                </div>
+
+                <div  class="individual">
+                    <p>Senha:</p>
+                    <input type="text" class="inputs" id="senhaLogin" required="">
+                    <button class="forgot">Esqueci a senha</button>
+                </div>
+
+                <input type="submit" value="Entrar" class="create" onclick="login()">
+
+            </form>
+
             <div class="icon-container">
-                <div class="vertical-line"></div>
-                <button id="openModal" onclick="openLogin()" class="expand-button"><img class="icon"src="https://cdn-icons-png.freepik.com/256/1144/1144760.png" alt="Pessoa"></button>
-                <div id="modal" class="modal">
+
+                <div id=d3 class="vertical-line"></div>
+                <img class="small-icon" id="hiddenArrow" style="display: none;" src="https://cdn-icons-png.flaticon.com/512/109/109618.png">
+
+                <button id="optionsButton" onclick="openOptions()" class="expand-button"><img class="icone" src="https://cdn-icons-png.freepik.com/256/1144/1144760.png" alt="Pessoa"></button>
+                <div id="modal" class="modal" style="display: none;">
                     <div class="modal-content">
                         <div class="review-writer">
                             <h1>Junte-se ao PLAYERBOXD!</h1>
-                            <button id="closeModal" class="expand-button" ><img class="icon" src="https://static.thenounproject.com/png/1292416-200.png" alt="close"></button>
+                            <button id="closeModal" class="expand-button" onclick="openSingUp()" ><img class="small-icon" src="https://static.thenounproject.com/png/1292416-200.png" alt="close"></button>
                         </div>
 
                         <form>
@@ -747,36 +862,45 @@ form .inputs{
                                     <div class=" terms">Concordo com os termos e condições do PLAYERBOXD</div>
                                 </div>
                         
-
                                 <input type="submit" value="Criar conta" class="create" onclick="SignUp()">
-
                         </form>
                     </div>
                 </div>
-                <img class="icon" src="https://www.freepnglogos.com/uploads/plus-icon/plus-icon-plus-svg-png-icon-download-1.png" alt="new-review">
+                
+                <button class="expand-button" id="d4" onclick="openReview()"><img class="icone" src="https://www.freepnglogos.com/uploads/plus-icon/plus-icon-plus-svg-png-icon-download-1.png" alt="new-review"></button>
+
+                <div id="reviewModal" class="modal" style="display: flex;" >
+                    <div id="new-reviewModal">
+                        <div class="review-writer">
+                            <h1>Nova review</h1>
+                            <button id="closeModal" class="expand-button" onclick="openSingUp()" ><img class="small-icon" src="https://static.thenounproject.com/png/1292416-200.png" alt="close"></button>    
+                        </div>
+                        <div id="reviewBody">
+
+                            
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
-        
 
     </header>
     <div class="int-body"> 
-
         <div class="body-columns">
             <div class="popular" alt="popular lists">
                 <div class="title">POPULAR</div>
                 <div class="grid-container">
-
                         <div><a href="#"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1r7f.png" class="game-cover"></a></div>
                         <div><a href="#"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1q1f.png" class="game-cover"></a></div>
                         <div><a href="#"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co65ac.png" class="game-cover"></a></div>
-
                         <div><a href="#"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co4jni.png" class="game-cover"></a></div>
+
+                        <div><a href="#"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co7np9.png" class="game-cover"></a></div>
+                        <div><a href="#"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co4yl7.png" class="game-cover"></a></div>
                         <div><a href="#"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1voh.png" class="game-cover"></a></div>
                         <div><a href="#"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co73ju.png" class="game-cover"></a></div>
-
                 </div>
-
                 <div class="title">LISTAS EM ALTA</div>
                 <div class="grid-list">
                     <div class="card-stack">
@@ -803,12 +927,8 @@ form .inputs{
 
                             <a href="#">
                                 <img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1tmu.png" class="card-cover">
-                            </a>
-                            
+                            </a>                   
                         </div>
-                        
-                        
-
                         <div alt="informações sobre a lista">
                             <a class="secondary-link" href="#">
                                 Melhores protagonistas
@@ -821,9 +941,7 @@ form .inputs{
                                 | 10 games
                             </p>
                         </div>
-
                     </div>
-
                     <div class="card-stack">
 
                         <div class="covers">
@@ -850,10 +968,8 @@ form .inputs{
                             <a href="#">
                                 <img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1vcf.png" class="card-cover">
 
-                            </a>
-                            
+                            </a> 
                         </div>
-
                         <div alt="informações sobre a lista">
                             <a class="secondary-link" href="#">
                                 SOULS FROMSOFTWARE 
@@ -866,9 +982,7 @@ form .inputs{
                                 | 8 games
                             </p>
                         </div>
-
                     </div>
-
                     <div class="card-stack">
                         <div class="covers">
                             <a href="#">
@@ -894,10 +1008,8 @@ form .inputs{
                             <a href="#">
                                 <img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1iyf.png" class="card-cover">
 
-                            </a>
-                            
+                            </a> 
                         </div>
-
                         <div alt="informações sobre a lista">
                             <a class="secondary-link" href="#">
                                 alguns roguelike 
@@ -910,29 +1022,23 @@ form .inputs{
                                 | 64 games
                             </p>
                         </div>
-
                     </div>
-
                 </div>
             </div>
-
         </div>
-        
 
         <div class="central-img">
             <div class= "quote">
-                DESCUBRA NOVAS EXPERIÊNCIAS. <br>SALVE O QUE VOCE QUER JOGAR. <br> RECOMENDE O QUE É BOM.          
+                DESCUBRA NOVAS EXPERIÊNCIAS. <br>SALVE O QUE VOCÊ QUER JOGAR. <br> RECOMENDE O QUE É BOM.          
             </div>
-            <img id="cont-img" src="https://i.ibb.co/PcDxvVt/central.png">
+            <img id="cont-img" src="https://i.ibb.co/cwsPHpv/central.png">
             <div class="little">A rede social feita para você, gamer.</div>
-        
         </div>
 
         <div class="box">
             <div class="internal-rect">
                 <div class="title">ANÁLISES POPULARES</div>
                 <div class="container">
-
                     <div class="reviewbox" id="review-box">
                             <div><a href="#"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1rs4.png" class="game-cover"></a></div>
                         <div class="review-text">
@@ -944,7 +1050,6 @@ form .inputs{
                                                 Fulano
                                             </a>
                                         </h2>
-                                  
                                 </div>
                             <div class="rectangle">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -1162,43 +1267,77 @@ form .inputs{
         expandButton.addEventListener('click', toggleExpand);
     });
 
+// ----------------------------------------------------------------------------
 
+    function openSingUp() {
+        const modal = document.getElementById('modal');
 
-    function openLogin() {
-    const openModalButton = document.getElementById('openModal');
-    const closeModalButton = document.getElementById('closeModal');
-    const modal = document.getElementById('modal');
-
-    openModalButton.addEventListener('click', () => {
-        modal.style.display = 'flex';
-    });
-
-    closeModalButton.addEventListener('click', () => {
-        modal.style.display = 'none';
-    });
+        if (modal.style.display == 'none') {
+                modal.style.display = 'flex';
+            } else {
+                modal.style.display = 'none';
+        }
+        
 
     }
 
-    const openModalButton = document.getElementById('openModal');
-    const closeModalButton = document.getElementById('closeModal');
-    const modal = document.getElementById('modal');
+// ----------------------------------------------------------------------------
+    let isOpened = false;
+    function openOptions() {
+        const element1 = document.getElementById("d1");
+        const element2 = document.getElementById("d2");
+        const element3 = document.getElementById("d3");
+        const element4 = document.getElementById("d4");
 
-    openModalButton.addEventListener('click', () => {
-        modal.style.display = 'flex';
-    });
+        const hiddenButton1 = document.getElementById("hiddenButton1");
+        const hiddenButton2 = document.getElementById("hiddenButton2");
 
-    closeModalButton.addEventListener('click', () => {
-        modal.style.display = 'none';
-    });
+        const hiddenArrow = document.getElementById("hiddenArrow");
+        
+        if(isSigning==false){
+            if (isOpened){
+                element1.style.display = "inline-block";
+                element2.style.display = "inline-block";
+                element3.style.display = "flex";
+                element4.style.display = "block";
 
+                hiddenButton1.style.display = "none";
+                hiddenButton2.style.display = "none";
 
+                hiddenArrow.style.display = "none";
+                isOpened = false;
+            }else {
+                element1.style.display = "none";
+                element2.style.display = "none";
+                element3.style.display = "none";
+                element4.style.display = "none";
+
+                hiddenButton1.style.display = "inline";
+                hiddenButton2.style.display = "inline";
+
+                hiddenArrow.style.display = "flex";
+                isOpened = true;
+            }
+        }else {
+            hiddenButton1.style.display = "inline";
+            hiddenButton2.style.display = "inline";
+            hiddenArrow.style.display = "flex";
+
+            area.style.gridTemplateColumns ="repeat(3, 1fr)"
+            optionsButton.style.marginBottom = "0px"
+            area.style.justifyItems = "center"
+            theLogin.style.display = "none";
+            isSigning = false;
+        }
+
+    }
+// ----------------------------------------------------------------------------
 
     function SignUp() {
     var username = document.getElementById("username").value;
     var email = document.getElementById("email").value;
     var senha = document.getElementById("senha").value;
     var con_senha = document.getElementById("con_senha").value;
-
 
     var conf = 0
 
@@ -1212,9 +1351,63 @@ form .inputs{
         localStorage.setItem('username', username)
         localStorage.setItem('email', email)
         localStorage.setItem('senha', senha)
-        localStorage.setItem('nome', nome)
-        
     }
 }
+// ----------------------------------------------------------------------------
+    let isSigning = false;    
+    function openSingIn(){
+        const hiddenButton1 = document.getElementById("hiddenButton1");
+        const hiddenButton2 = document.getElementById("hiddenButton2");
+        const optionsButton = document.getElementById("optionsButton");
+        const hiddenArrow = document.getElementById("hiddenArrow");
+        const theLogin = document.getElementById ("theLogin")
+        const area = document.getElementById("area");
+        
+        if(isSigning==false){
+            hiddenButton1.style.display = "none";
+            hiddenButton2.style.display = "none";
+            hiddenArrow.style.display = "none";
+
+            area.style.gridTemplateColumns ="90% 10%"
+            optionsButton.style.marginBottom = "-10px"
+            area.style.justifyItems = "initial"
+            theLogin.style.display = "flex";
+            isSigning = true;
+        }
+    }
+
+// ----------------------------------------------------------------------------
+
+    function login() {
+        var username = document.getElementById("usernameLogin").value;
+        var senha = document.getElementById("senhaLogin").value;
+
+        var correct_username = localStorage.getItem("username")
+        var correct_senha = localStorage.getItem("senha")
+
+        if (correct_username == username  && correct_senha == senha){
+            alert ("Entrou")
+        }
+        else {
+            alert("Usuário ou senha incorreto / usuário não encontrado.")
+            document.getElementById("senhaLogin").value = ""
+        }
+    }
+
+// ----------------------------------------------------------------------------
+
+function openReview() {
+        const reviewModal = document.getElementById('reviewModal');
+        const newReviewModal=document.getElementById('new-reviewModal');
+
+        if (reviewModal.style.display == 'none') {
+                reviewModal.style.display = 'flex';
+                newReviewModal.style.display = 'flex';
+            } else {
+                reviewModal.style.display = 'none';
+                newReviewModal.style.display = 'none'; 
+            }
+    }
+
 </script>
 </html>
