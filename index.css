@@ -40,7 +40,7 @@ header {
 
     margin-left: 10px;
 }
-#header.icone{
+#header .icone{
     width: 35px;
     height: 35px;
 }
