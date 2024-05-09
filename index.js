@@ -1,43 +1,95 @@
-const reviewBox = document.getElementById('review-box');
-const expandButton = reviewBox.querySelector('.expand-button');
+const expandButtons = document.querySelectorAll('.expander');
 
-let isExpanded = false;
+expandButtons.forEach((expandButton) => {
+    const reviewBox = expandButton.closest('.reviewbox'); // 
+    let isExpanded = false;
 
-function toggleExpand() {
-    if (isExpanded) {
-        reviewBox.style.height = '22%';
-        expandButton.classList.remove('img-expand');
-    } else {
-        reviewBox.style.height = 'auto';
-        expandButton.classList.add('img-expand');
+    function toggleExpand() {
+        if (isExpanded) {
+            reviewBox.style.height = '22%';
+            expandButton.classList.remove('img-expand');
+        } else {
+            reviewBox.style.height = 'auto';
+            expandButton.classList.add('img-expand');
+        }
+        isExpanded = !isExpanded;
     }
-    isExpanded = !isExpanded;
+
+    expandButton.addEventListener('click', toggleExpand);
+});
+
+
+// ----------------------------------------------------------------------------
+
+function openSingUp() {
+    const modal = document.getElementById('modal');
+
+    if (modal.style.display == 'none') {
+            modal.style.display = 'flex';
+        } else {
+            modal.style.display = 'none';
+    }
+    
+
 }
 
-expandButton.addEventListener('click', toggleExpand);
+// ----------------------------------------------------------------------------
+let isOpened = false;
+function openOptions() {
+    const element1 = document.getElementById("d1");
+    const element2 = document.getElementById("d2");
+    const element3 = document.getElementById("d3");
+    const element4 = document.getElementById("d4");
 
+    const hiddenButton1 = document.getElementById("hiddenButton1");
+    const hiddenButton2 = document.getElementById("hiddenButton2");
 
+    const hiddenArrow = document.getElementById("hiddenArrow");
+    
+    if(isSigning==false){
+        if (isOpened){
+            element1.style.display = "inline-block";
+            element2.style.display = "inline-block";
+            element3.style.display = "flex";
+            element4.style.display = "block";
 
-const openModalButton = document.getElementById('openModal');
-const closeModalButton = document.getElementById('closeModal');
-const modal = document.getElementById('modal');
+            hiddenButton1.style.display = "none";
+            hiddenButton2.style.display = "none";
 
-openModalButton.addEventListener('click', () => {
-    modal.style.display = 'flex';
-});
+            hiddenArrow.style.display = "none";
+            isOpened = false;
+        }else {
+            element1.style.display = "none";
+            element2.style.display = "none";
+            element3.style.display = "none";
+            element4.style.display = "none";
 
-closeModalButton.addEventListener('click', () => {
-    modal.style.display = 'none';
-});
+            hiddenButton1.style.display = "inline";
+            hiddenButton2.style.display = "inline";
 
+            hiddenArrow.style.display = "flex";
+            isOpened = true;
+        }
+    }else {
+        hiddenButton1.style.display = "inline";
+        hiddenButton2.style.display = "inline";
+        hiddenArrow.style.display = "flex";
 
+        area.style.gridTemplateColumns ="repeat(3, 1fr)"
+        optionsButton.style.marginBottom = "0px"
+        area.style.justifyItems = "center"
+        theLogin.style.display = "none";
+        isSigning = false;
+    }
+
+}
+// ----------------------------------------------------------------------------
 
 function SignUp() {
 var username = document.getElementById("username").value;
 var email = document.getElementById("email").value;
 var senha = document.getElementById("senha").value;
 var con_senha = document.getElementById("con_senha").value;
-
 
 var conf = 0
 
@@ -51,7 +103,80 @@ if (conf == 0) {
     localStorage.setItem('username', username)
     localStorage.setItem('email', email)
     localStorage.setItem('senha', senha)
-    localStorage.setItem('nome', nome)
+}
+}
+// ----------------------------------------------------------------------------
+let isSigning = false;    
+function openSingIn(){
+    const hiddenButton1 = document.getElementById("hiddenButton1");
+    const hiddenButton2 = document.getElementById("hiddenButton2");
+    const optionsButton = document.getElementById("optionsButton");
+    const hiddenArrow = document.getElementById("hiddenArrow");
+    const theLogin = document.getElementById ("theLogin")
+    const area = document.getElementById("area");
     
+    if(isSigning==false){
+        hiddenButton1.style.display = "none";
+        hiddenButton2.style.display = "none";
+        hiddenArrow.style.display = "none";
+
+        area.style.gridTemplateColumns ="90% 10%"
+        optionsButton.style.marginBottom = "-10px"
+        area.style.justifyItems = "initial"
+        theLogin.style.display = "flex";
+        isSigning = true;
+    }
 }
+
+// ----------------------------------------------------------------------------
+
+function login() {
+    var username = document.getElementById("usernameLogin").value;
+    var senha = document.getElementById("senhaLogin").value;
+
+    var correct_username = localStorage.getItem("username")
+    var correct_senha = localStorage.getItem("senha")
+
+    if (correct_username == username  && correct_senha == senha){
+        alert ("Entrou")
+    }
+    else {
+        alert("Usuário ou senha incorreto / usuário não encontrado.")
+        document.getElementById("senhaLogin").value = ""
+    }
 }
+
+// ----------------------------------------------------------------------------
+
+function openReview() {
+        const reviewModal = document.getElementById('reviewModal');
+        const newReviewModal=document.getElementById('new-reviewModal');
+
+        if (reviewModal.style.display == 'none') {
+                reviewModal.style.display = 'flex';
+                newReviewModal.style.display = 'flex';
+            } else {
+                reviewModal.style.display = 'none';
+                newReviewModal.style.display = 'none'; 
+            }
+    }
+
+// ----------------------------------------------------------------------------
+
+
+
+const select = document.getElementById("games");
+const datalist = document.getElementById("games-list");
+
+select.addEventListener("input", function () {
+    const termoPesquisa = select.value.toLowerCase();
+
+    for (const option of datalist.options) {
+        const textoOpcao = option.value.toLowerCase();
+        if (textoOpcao.includes(termoPesquisa)) {
+            option.style.display = "block";
+        } else {
+            option.style.display = "none";
+        }
+    }
+});
