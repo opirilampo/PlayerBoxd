@@ -40,13 +40,18 @@ header {
 
     margin-left: 10px;
 }
-.icone{
+#header.icone{
     width: 35px;
     height: 35px;
 }
-#header .small-icon{
+
+
+.small-icon{
     width: 25px;
     height: 25px;
+}
+#footer .small-icon{
+    margin-right: 7px;
 }
 
 #header .icon-container .vertical-line {
