@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet"  type="text/css" href="./index.css">
     <title>PlayerBoxd</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"  type="text/css" href="./index.css">
     <script src="./index.js"> </script>
 
     
@@ -88,14 +88,14 @@
             <div class="icon-container">
 
                 <div id=d3 class="vertical-line"></div>
-                <img class="small-icon" id="hiddenArrow" style="display: none;" src="https://cdn-icons-png.flaticon.com/512/109/109618.png">
+                <img class="small-icon" id="hiddenArrow" style="display: none;" src="./img/arrow.png">
 
-                <button id="optionsButton" onclick="openOptions()" class="expand-button"><img class="icone" src="https://cdn-icons-png.freepik.com/256/1144/1144760.png" alt="Pessoa"></button>
+                <button id="optionsButton" onclick="openOptions()" class="someButton"><img class="icone" src="./img/pessoa.png" alt="Pessoa"></button>
                 <div id="modal" class="modal" style="display: none;">
                     <div class="modal-content">
                         <div class="review-writer">
                             <h1>Junte-se ao PLAYERBOXD!</h1>
-                            <button id="closeModal" class="expand-button" onclick="openSingUp()" ><img class="small-icon" src="https://static.thenounproject.com/png/1292416-200.png" alt="close"></button>
+                            <button id="closeModal" class="someButton" onclick="openSingUp()" ><img class="small-icon" src="./img/fechar.png" alt="close"></button>
                         </div>
 
                         <form>
@@ -121,31 +121,32 @@
                     </div>
                 </div>
                 
-                <button class="expand-button" id="d4" onclick="openReview()"><img class="icone" src="https://www.freepnglogos.com/uploads/plus-icon/plus-icon-plus-svg-png-icon-download-1.png" alt="new-review"></button>
+                <button class="someButton" id="d4" onclick="openReview()"><img class="icone" src="./img/mais.png" alt="new-review"></button>
 
-                <div id="reviewModal" class="modal" style="display: flex;" >
-                    <div id="new-reviewModal">
+                    <div style="display: flex;" id="new-reviewModal">
                         <div class="review-writer">
                             <h1>Nova review</h1>
-                            <button id="closeModal" class="expand-button" onclick="openSingUp()" ><img class="small-icon" src="https://static.thenounproject.com/png/1292416-200.png" alt="close"></button>    
+                            <button id="closeModal" class="someButton" onclick="openSingUp()" ><img class="small-icon" src="./img/fechar.png" alt="close"></button>    
                         </div>
 
                         <div class="select-container">
-                            <label for="games" class="titleSelect" >Game:</label>
-                            <input type="text" id="games" class="searchInput" list="games-list">
-                            <datalist id="games-list">
-                                <option value="God of War"></option>
-                                <option value="Red Dead Redemption 2"></option>
-                                <option value="Uncharted 4"></option>
-                                <option value="The Last of Us Part II"></option>
-                            </datalist>
+                            <label class="titleSelect" >Game:</label>
+                            <div>
+                                <input class="searchInput"  autocomplete="off" role="combobox" list="" id="games" name="gamesList" placeholder="Selecione o game">
+                                <datalist id="gamesList" role="listbox">
+                                    <option class="terms" value="Internet Explorer">Internet Explorer</option>
+                                    <option class="terms" value="Internet Explorer">Internet Explorer</option>
+                                    <option class="terms" value="Internet Explorer">Internet Explorer</option>
+                                    <option class="terms" value="Internet Explorer">Internet Explorer</option>
+                                </datalist>
+                            </div>
                         </div>
 
 
                         <div class="select-container">
                             <label for="plataform" class="titleSelect">Plataforma:</label>
                             <input type="text" id="plataform" class="searchInput" list="plataform-list">
-                            <datalist id="plataform-list" class="selectBox">
+                            <datalist id="plataform-list" >
                                 <option value="Playstation"></option>
                                 <option value="Xbox"></option>
                                 <option value="Nintendo Switch"></option>
@@ -162,7 +163,6 @@
                         <input type="submit" value="Postar" class="create" >
 
                     </div>
-                </div>
 
             </div>
         </div>
@@ -313,7 +313,7 @@
             <div class= "quote">
                 DESCUBRA NOVAS EXPERIÊNCIAS. <br>SALVE O QUE VOCÊ QUER JOGAR. <br> RECOMENDE O QUE É BOM.          
             </div>
-            <img id="cont-img" src="https://i.ibb.co/cwsPHpv/central.png">
+            <img id="cont-img" src="./img/central.png">
             <div class="little">A rede social feita para você, gamer.</div>
         </div>
 
@@ -323,21 +323,57 @@
                 <div class="container">
                     <div class="reviewbox" id="review-box">
                             <div><a href="#"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1rs4.png" class="game-cover"></a></div>
+                            <div class="review-text">
+                                    <div class="review-writer">
+                                        <a class="name-game" href="#">Portal 2 </a>
+                                            <h2 class="owner" >
+                                                Por
+                                                <a class="username" href="#">
+                                                    Fulano
+                                                </a>
+                                            </h2>
+                                    </div>
+                                <div class="rectangle">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+
+                                <button class="expand-button" onclick="toggleExpand()"><img class="img-expand" style="filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);" src="./img/expand.png" alt="expand"></button>
+
+                                <div class="info2" >
+                                    <div class="rating">★★★★☆</div>
+                                    <div class="info">
+                                        <div class="info">
+                                            <a href="#"> <img class="interaction"src="https://icons.iconarchive.com/icons/custom-icon-design/mono-business-2/256/thumbs-up-icon.png" alt="like"></a>
+                                            <div class="likes">10 likes</div>
+                                        </div>
+
+                                            <a href="#"> <img class="interaction"src="https://cdn-icons-png.flaticon.com/512/54/54916.png" alt="like"></a>
+                                    </div>
+                                </div>
+
+                            </div>
+                    </div>
+
+                    <div class="horizontal-line"> </div>
+
+                    <div class="reviewbox" id="review-box">
+                        <div><a href="#"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co741o.png" class="game-cover"></a></div>
                         <div class="review-text">
                                 <div class="review-writer">
-                                    <a class="name-game" href="#">Portal 2 </a>
+                                    <a class="name-game" href="#">Helldivers 2 </a>
                                         <h2 class="owner" >
                                             Por
                                             <a class="username" href="#">
                                                 Fulano
                                             </a>
                                         </h2>
+                                
                                 </div>
                             <div class="rectangle">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             </div>
 
-                            <button class="expand-button" onclick="toggleExpand()"><img class="img-expand" style="filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);" src="/expand.png" alt="expand"></button>
+                            <button class="expand-button" onclick="toggleExpand()"><img class="img-expand" style="filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);" src="./img/expand.png" alt="expand"></button>
 
                             <div class="info2" >
                                 <div class="rating">★★★★☆</div>
@@ -357,145 +393,109 @@
                     <div class="horizontal-line"> </div>
 
                     <div class="reviewbox" id="review-box">
-                        <div><a href="#"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co741o.png" class="game-cover"></a></div>
-                    <div class="review-text">
-                            <div class="review-writer">
-                                <a class="name-game" href="#">Helldivers 2 </a>
-                                    <h2 class="owner" >
-                                        Por
-                                        <a class="username" href="#">
-                                            Fulano
-                                        </a>
-                                    </h2>
-                              
-                            </div>
-                        <div class="rectangle">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
-
-                        <button class="expand-button" onclick="toggleExpand()"><img class="img-expand" style="filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);" src="/expand.png" alt="expand"></button>
-
-                        <div class="info2" >
-                            <div class="rating">★★★★☆</div>
-                            <div class="info">
-                                <div class="info">
-                                    <a href="#"> <img class="interaction"src="https://icons.iconarchive.com/icons/custom-icon-design/mono-business-2/256/thumbs-up-icon.png" alt="like"></a>
-                                    <div class="likes">10 likes</div>
-                                </div>
-
-                                    <a href="#"> <img class="interaction"src="https://cdn-icons-png.flaticon.com/512/54/54916.png" alt="like"></a>
-                            </div>
-                        </div>
-
-                    </div>
-                    </div>
-
-                    <div class="horizontal-line"> </div>
-
-                    <div class="reviewbox" id="review-box">
                         <div><a href="#"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1qrs.png" class="game-cover"></a></div>
-                    <div class="review-text">
-                            <div class="review-writer">
-                                <a class="name-game" href="#">Limbo</a>
-                                    <h2 class="owner" >
-                                        Por
-                                        <a class="username" href="#">
-                                            Fulano
-                                        </a>
-                                    </h2>
-                              
-                            </div>
-                        <div class="rectangle">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
-
-                        <button class="expand-button" onclick="toggleExpand()"><img class="img-expand" style="filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);" src="/expand.png" alt="expand"></button>
-
-                        <div class="info2" >
-                            <div class="rating">★★★★☆</div>
-                            <div class="info">
-                                <div class="info">
-                                    <a href="#"> <img class="interaction"src="https://icons.iconarchive.com/icons/custom-icon-design/mono-business-2/256/thumbs-up-icon.png" alt="like"></a>
-                                    <div class="likes">10 likes</div>
+                        <div class="review-text">
+                                <div class="review-writer">
+                                    <a class="name-game" href="#">Limbo</a>
+                                        <h2 class="owner" >
+                                            Por
+                                            <a class="username" href="#">
+                                                Fulano
+                                            </a>
+                                        </h2>
+                                
                                 </div>
-
-                                    <a href="#"> <img class="interaction"src="https://cdn-icons-png.flaticon.com/512/54/54916.png" alt="like"></a>
+                            <div class="rectangle">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             </div>
-                        </div>
 
-                    </div>
+                            <button class="expand-button" onclick="toggleExpand()"><img class="img-expand" style="filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);" src="./img/expand.png" alt="expand"></button>
+
+                            <div class="info2" >
+                                <div class="rating">★★★★☆</div>
+                                <div class="info">
+                                    <div class="info">
+                                        <a href="#"> <img class="interaction"src="https://icons.iconarchive.com/icons/custom-icon-design/mono-business-2/256/thumbs-up-icon.png" alt="like"></a>
+                                        <div class="likes">10 likes</div>
+                                    </div>
+
+                                        <a href="#"> <img class="interaction"src="https://cdn-icons-png.flaticon.com/512/54/54916.png" alt="like"></a>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
 
                     <div class="horizontal-line"> </div>
 
                     <div class="reviewbox" id="review-box">
                         <div><a href="#"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co59v0.png" class="game-cover"></a></div>
-                    <div class="review-text">
-                            <div class="review-writer">
-                                <a class="name-game" href="#">Rise of The Ronin </a>
-                                    <h2 class="owner" >
-                                        Por
-                                        <a class="username" href="#">
-                                            Fulano
-                                        </a>
-                                    </h2>
-                              
-                            </div>
-                        <div class="rectangle">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
-
-                        <button class="expand-button" onclick="toggleExpand()"><img class="img-expand" style="filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);" src="/expand.png" alt="expand"></button>
-
-                        <div class="info2" >
-                            <div class="rating">★★★★☆</div>
-                            <div class="info">
-                                <div class="info">
-                                    <a href="#"> <img class="interaction"src="https://icons.iconarchive.com/icons/custom-icon-design/mono-business-2/256/thumbs-up-icon.png" alt="like"></a>
-                                    <div class="likes">10 likes</div>
+                        <div class="review-text">
+                                <div class="review-writer">
+                                    <a class="name-game" href="#">Rise of The Ronin </a>
+                                        <h2 class="owner" >
+                                            Por
+                                            <a class="username" href="#">
+                                                Fulano
+                                            </a>
+                                        </h2>
+                                
                                 </div>
-
-                                    <a href="#"> <img class="interaction"src="https://cdn-icons-png.flaticon.com/512/54/54916.png" alt="like"></a>
+                            <div class="rectangle">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             </div>
-                        </div>
 
-                    </div>
+                            <button class="expand-button" onclick="toggleExpand()"><img class="img-expand" style="filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);" src="./img/expand.png" alt="expand"></button>
+
+                            <div class="info2" >
+                                <div class="rating">★★★★☆</div>
+                                <div class="info">
+                                    <div class="info">
+                                        <a href="#"> <img class="interaction"src="https://icons.iconarchive.com/icons/custom-icon-design/mono-business-2/256/thumbs-up-icon.png" alt="like"></a>
+                                        <div class="likes">10 likes</div>
+                                    </div>
+
+                                        <a href="#"> <img class="interaction"src="https://cdn-icons-png.flaticon.com/512/54/54916.png" alt="like"></a>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
 
                     <div class="horizontal-line"> </div>
 
                     <div class="reviewbox" id="review-box">
                         <div><a href="#"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co833w.png" class="game-cover"></a></div>
-                    <div class="review-text">
-                            <div class="review-writer">
-                                <a class="name-game" href="#">Dragon's Dogma 2</a>
-                                    <h2 class="owner" >
-                                        Por
-                                        <a class="username" href="#">
-                                            Fulano
-                                        </a>
-                                    </h2>
-                              
-                            </div>
-                        <div class="rectangle">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
-
-                        <button class="expand-button" onclick="expandText()"><img class="img-expand" style="filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);" src="/expand.png" alt="expand"></button>
-
-                        <div class="info2" >
-                            <div class="rating">★★★★☆</div>
-                            <div class="info">
-                                <div class="info">
-                                    <a href="#"> <img class="interaction"src="https://icons.iconarchive.com/icons/custom-icon-design/mono-business-2/256/thumbs-up-icon.png" alt="like"></a>
-                                    <div class="likes">10 likes</div>
+                        <div class="review-text">
+                                <div class="review-writer">
+                                    <a class="name-game" href="#">Dragon's Dogma 2</a>
+                                        <h2 class="owner" >
+                                            Por
+                                            <a class="username" href="#">
+                                                Fulano
+                                            </a>
+                                        </h2>
+                                
                                 </div>
-
-                                    <a href="#"> <img class="interaction"src="https://cdn-icons-png.flaticon.com/512/54/54916.png" alt="like"></a>
+                            <div class="rectangle">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             </div>
-                        </div>
 
-                    </div>
+                            <button class="expand-button" onclick="toggleExpand()"><img class="img-expand" style="filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(64deg) brightness(103%) contrast(101%);" src="./img/expand.png" alt="expand"></button>
+
+                            <div class="info2" >
+                                <div class="rating">★★★★☆</div>
+                                <div class="info">
+                                    <div class="info">
+                                        <a href="#"> <img class="interaction"src="https://icons.iconarchive.com/icons/custom-icon-design/mono-business-2/256/thumbs-up-icon.png" alt="like"></a>
+                                        <div class="likes">10 likes</div>
+                                    </div>
+
+                                        <a href="#"> <img class="interaction"src="https://cdn-icons-png.flaticon.com/512/54/54916.png" alt="like"></a>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
 
                     <a href="#" class="button">...</a>
@@ -515,10 +515,10 @@
         </div>
         <div class="right-buttons">
             <div class="icon-container" id="solution">
-                <a href="#"><img class="small-icon" src="/youtube.png" alt="Youtube"></a>
-                <a href="#"><img class="small-icon" src="/tiktok.png" alt="Tiktok"></a>
-                <a href="#"><img class="small-icon"src="/insta.png" alt="Instagram"></a>
-                <a href="#"><img class="small-icon" src="/twitter.png" alt="Twitter"></a>
+                <a href="#"><img class="small-icon" src="./img/youtube.png" alt="Youtube"></a>
+                <a href="#"><img class="small-icon" src="./img/tiktok.png" alt="Tiktok"></a>
+                <a href="#"><img class="small-icon"src="./img/insta.png" alt="Instagram"></a>
+                <a href="#"><img class="small-icon" src="./img/twitter.png" alt="Twitter"></a>
             </div>
         </div>
 

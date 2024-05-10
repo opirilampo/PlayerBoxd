@@ -552,11 +552,13 @@ width: %;
 }
 
 
-.expander {
+.someButton {
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
+
+
 .reviewbox .img-expand{
     height: 13px ;
     transform: rotate(180deg);
@@ -721,7 +723,7 @@ display: block;
     align-items: center;
 }
 
-.modal-content .terms{
+.terms{
     font-family: Copperplate Gothic;
     color: #faf0db;
     font-size: calc(0.45vw + 0.45vh);
@@ -791,8 +793,17 @@ display: block;
         margin-bottom: 10px;
     }
 
+    #header .titleSelect {
+        font-family: Copperplate Gothic;
+        color: #faf0db;
+        font-size: calc(0.63vw + 0.63vh);
+        margin: 8px;
+    }
+
+
+
     .searchInput {
-        height: 3vh;
+        height: 2.5vh;
         border-radius: 20px;
         width: 15vw;
         font-family: Lucida Sans Typewriter;
@@ -802,30 +813,25 @@ display: block;
         background-color: transparent;
         border: 2px solid #95845a;
     }
-
-   .selectBox {
-    position: absolute;
-    top: 100%;
-    height: fit-content;
-    left: 0;
-    overflow-y: hidden;
-    border: 1px solid #F4EEE0;
-    border-radius: 10px;
-    padding: 5px;
-    font-size: calc(0.5vw + 0.5vh);
-    background-color: rgba(0, 0, 0, 0.4);
-    text-align: center;
+    datalist {
+        position: absolute;
+        border-top: none;
+        width: 15vw;
+        padding: 5px;
+        max-height: 12vh;
+        overflow-y: auto;
+        border-radius: 10px;
+        padding: 5px;
+        font-size: calc(0.5vw + 0.5vh);
+        background-color: #2b2834;
     }
-
-    .selectbox option {
-        border-bottom: 1px dotted white;
-        margin: 3px;
-        color: #f0ede3;
-    }
-
-    #header .titleSelect {
+    .terms{
         font-family: Copperplate Gothic;
         color: #faf0db;
-        font-size: calc(0.63vw + 0.63vh);
-        margin: 8px;
+        font-size: calc(0.45vw + 0.45vh);
+        margin-top: 1px;
+    
+    }
+    option:hover,  .active{
+        background-color: rgba(0, 0, 0, 0.3);
     }

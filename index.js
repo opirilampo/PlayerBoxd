@@ -1,22 +1,25 @@
-const expandButtons = document.querySelectorAll('.expander');
+document.addEventListener('DOMContentLoaded', function() {
+    const expandButtons = document.querySelectorAll('.expand-button');
 
-expandButtons.forEach((expandButton) => {
-    const reviewBox = expandButton.closest('.reviewbox'); // 
-    let isExpanded = false;
+    expandButtons.forEach((expandButton) => {
+        const reviewBox = expandButton.closest('.reviewbox');
+        let isExpanded = false;
 
-    function toggleExpand() {
-        if (isExpanded) {
-            reviewBox.style.height = '22%';
-            expandButton.classList.remove('img-expand');
-        } else {
-            reviewBox.style.height = 'auto';
-            expandButton.classList.add('img-expand');
+        function toggleExpand() {
+            if (isExpanded) {
+                reviewBox.style.height = '22%';
+                expandButton.classList.remove('img-expand');
+            } else {
+                reviewBox.style.height = 'auto';
+                expandButton.classList.add('img-expand');
+            }
+            isExpanded = !isExpanded;
         }
-        isExpanded = !isExpanded;
-    }
 
-    expandButton.addEventListener('click', toggleExpand);
+        expandButton.addEventListener('click', toggleExpand);
+    });
 });
+
 
 
 // ----------------------------------------------------------------------------
@@ -163,8 +166,6 @@ function openReview() {
 
 // ----------------------------------------------------------------------------
 
-
-
 const select = document.getElementById("games");
 const datalist = document.getElementById("games-list");
 
@@ -180,3 +181,60 @@ select.addEventListener("input", function () {
         }
     }
 });
+
+// ----------------------------------------------------------------------------
+
+games.onfocus = function () {
+    gamesList.style.display = 'block';
+    games.style.borderRadius = "5px 5px 0 0";  
+  };
+  for (let option of gamesList.options) {
+    option.onclick = function () {
+      games.value = option.value;
+      gamesList.style.display = 'none';
+      games.style.borderRadius = "5px";
+    }
+  };
+  
+  games.oninput = function() {
+    currentFocus = -1;
+    var text = games.value.toUpperCase();
+    for (let option of gamesList.options) {
+      if(option.value.toUpperCase().indexOf(text) > -1){
+        option.style.display = "block";
+    }else{
+      option.style.display = "none";
+      }
+    };
+  }
+  var currentFocus = -1;
+  games.onkeydown = function(e) {
+    if(e.keyCode == 40){
+      currentFocus++
+     addActive(gamesList.options);
+    }
+    else if(e.keyCode == 38){
+      currentFocus--
+     addActive(gamesList.options);
+    }
+    else if(e.keyCode == 13){
+      e.preventDefault();
+          if (currentFocus > -1) {
+            /*and simulate a click on the "active" item:*/
+            if (gamesList.options) gamesList.options[currentFocus].click();
+          }
+    }
+  }
+  
+  function addActive(x) {
+      if (!x) return false;
+      removeActive(x);
+      if (currentFocus >= x.length) currentFocus = 0;
+      if (currentFocus < 0) currentFocus = (x.length - 1);
+      x[currentFocus].classList.add("active");
+    }
+    function removeActive(x) {
+      for (var i = 0; i < x.length; i++) {
+        x[i].classList.remove("active");
+      }
+    }
