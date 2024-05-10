@@ -5,7 +5,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet"  type="text/css" href="./index.css">
-    <script src="./index.js"> </script>
+
 
     
 </head>
@@ -126,41 +126,45 @@
                     <div style="display: none;" id="new-reviewModal">
                         <div class="review-writer">
                             <h1>Nova review</h1>
-                            <button id="closeModal" class="someButton" onclick="openSingUp()" ><img class="small-icon" src="./img/fechar.png" alt="close"></button>    
+                            <button id="closeModal" class="someButton" onclick="openReview()" ><img class="small-icon" src="./img/fechar.png" alt="close"></button>    
                         </div>
-
+                        
                         <div class="select-container">
                             <label class="titleSelect" >Game:</label>
                             <div>
                                 <input class="searchInput"  autocomplete="off" role="combobox" list="" id="games" name="gamesList" placeholder="Selecione o game">
                                 <datalist id="gamesList" role="listbox">
-                                    <option class="terms" value="Internet Explorer">Internet Explorer</option>
-                                    <option class="terms" value="Internet Explorer">Internet Explorer</option>
-                                    <option class="terms" value="Internet Explorer">Internet Explorer</option>
-                                    <option class="terms" value="Internet Explorer">Internet Explorer</option>
+                                    <option class="terms" value="Red Dead Redemption 2">Red Dead Redemption 2</option>
+                                    <option class="terms" value="The Last of Us Part II">The Last of Us Part II</option>
+                                    <option class="terms" value="Outer Wilds">Outer Wilds</option>
+                                    <option class="terms" value="Portal 2">Portal 2</option>
+                                </datalist>
+                            </div>
+                        </div>
+
+                        <div class="select-container">
+                            <label class="titleSelect" >Plataforma:</label>
+                            <div>
+                                <input class="searchInput"  autocomplete="off" role="combobox" list="" id="plataforms" name="plataformsList" placeholder="Selecione a plataforma">
+                                <datalist id="plataformsList" role="listbox">
+                                    <option class="terms" value="Playstation">Playstation</option>
+                                    <option class="terms" value="Xbox">Xbox</option>
+                                    <option class="terms" value="Nintendo Switch">Nintendo Switch</option>
+                                    <option class="terms" value="PC">PC</option>
                                 </datalist>
                             </div>
                         </div>
 
 
-                        <div class="select-container">
-                            <label for="plataform" class="titleSelect">Plataforma:</label>
-                            <input type="text" id="plataform" class="searchInput" list="plataform-list">
-                            <datalist id="plataform-list" >
-                                <option value="Playstation"></option>
-                                <option value="Xbox"></option>
-                                <option value="Nintendo Switch"></option>
-                                <option value="PC"></option>
-                            </datalist>
+                        
+                        <textarea id="textReview" placeholder="Escreva aqui"></textarea>
+
+
+                        <div class="review-writer">
+                            <div class="rating">★★★★☆</div>
+                            <input type="submit" value="Postar" class="create" >
                         </div>
 
-                        <input id="textReview" aria-placeholder="Escreva aqui">
-
-
-                        
-                        <div class="rating">★★★★☆</div>
-
-                        <input type="submit" value="Postar" class="create" >
 
                     </div>
 
@@ -526,6 +530,6 @@
         
     </footer>
     
-    
+        <script src="./index.js"> </script>
 </body>
 </html>

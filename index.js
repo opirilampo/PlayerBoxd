@@ -20,8 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
-
 // ----------------------------------------------------------------------------
 
 function openSingUp() {
@@ -37,6 +35,7 @@ function openSingUp() {
 }
 
 // ----------------------------------------------------------------------------
+
 let isOpened = false;
 function openOptions() {
     const element1 = document.getElementById("d1");
@@ -86,6 +85,7 @@ function openOptions() {
     }
 
 }
+
 // ----------------------------------------------------------------------------
 
 function SignUp() {
@@ -108,7 +108,9 @@ if (conf == 0) {
     localStorage.setItem('senha', senha)
 }
 }
+
 // ----------------------------------------------------------------------------
+
 let isSigning = false;    
 function openSingIn(){
     const hiddenButton1 = document.getElementById("hiddenButton1");
@@ -152,89 +154,122 @@ function login() {
 // ----------------------------------------------------------------------------
 
 function openReview() {
-        const reviewModal = document.getElementById('reviewModal');
         const newReviewModal=document.getElementById('new-reviewModal');
-
-        if (reviewModal.style.display == 'none') {
-                reviewModal.style.display = 'flex';
+        if (newReviewModal.style.display == 'none') {
                 newReviewModal.style.display = 'flex';
             } else {
-                reviewModal.style.display = 'none';
                 newReviewModal.style.display = 'none'; 
             }
-    }
-
-// ----------------------------------------------------------------------------
-
-const select = document.getElementById("games");
-const datalist = document.getElementById("games-list");
-
-select.addEventListener("input", function () {
-    const termoPesquisa = select.value.toLowerCase();
-
-    for (const option of datalist.options) {
-        const textoOpcao = option.value.toLowerCase();
-        if (textoOpcao.includes(termoPesquisa)) {
-            option.style.display = "block";
-        } else {
-            option.style.display = "none";
-        }
-    }
-});
+}
 
 // ----------------------------------------------------------------------------
 
 games.onfocus = function () {
     gamesList.style.display = 'block';
-    games.style.borderRadius = "5px 5px 0 0";  
-  };
-  for (let option of gamesList.options) {
+};
+for (let option of gamesList.options) {
+option.onclick = function () {
+    games.value = option.value;
+    gamesList.style.display = 'none';
+}
+};
+
+games.oninput = function() {
+currentFocus = -1;
+var text = games.value.toUpperCase();
+for (let option of gamesList.options) {
+    if(option.value.toUpperCase().indexOf(text) > -1){
+    option.style.display = "block";
+}else{
+    option.style.display = "none";
+    }
+};
+}
+var currentFocus = -1;
+games.onkeydown = function(e) {
+if(e.keyCode == 40){
+    currentFocus++
+    addActive(gamesList.options);
+}
+else if(e.keyCode == 38){
+    currentFocus--
+    addActive(gamesList.options);
+}
+else if(e.keyCode == 13){
+    e.preventDefault();
+        if (currentFocus > -1) {
+        /*and simulate a click on the "active" item:*/
+        if (gamesList.options) gamesList.options[currentFocus].click();
+        }
+}
+}
+
+function addActive(x) {
+    if (!x) return false;
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    x[currentFocus].classList.add("active");
+}
+function removeActive(x) {
+    for (var i = 0; i < x.length; i++) {
+    x[i].classList.remove("active");
+    }
+}
+
+// ----------------------------------------------------------------------------
+
+plataforms.onfocus = function () {
+    plataformsList.style.display = 'block';
+};
+for (let option of plataformsList.options) {
     option.onclick = function () {
-      games.value = option.value;
-      gamesList.style.display = 'none';
-      games.style.borderRadius = "5px";
+    plataforms.value = option.value;
+    plataformsList.style.display = 'none';
+}
+};
+
+plataforms.oninput = function() {
+currentFocus = -1;
+var text = plataforms.value.toUpperCase();
+for (let option of plataformsList.options) {
+    if(option.value.toUpperCase().indexOf(text) > -1){
+    option.style.display = "block";
+}else{
+    option.style.display = "none";
     }
-  };
-  
-  games.oninput = function() {
-    currentFocus = -1;
-    var text = games.value.toUpperCase();
-    for (let option of gamesList.options) {
-      if(option.value.toUpperCase().indexOf(text) > -1){
-        option.style.display = "block";
-    }else{
-      option.style.display = "none";
-      }
-    };
-  }
-  var currentFocus = -1;
-  games.onkeydown = function(e) {
-    if(e.keyCode == 40){
-      currentFocus++
-     addActive(gamesList.options);
+};
+}
+var currentFocus = -1;
+plataforms.onkeydown = function(e) {
+if(e.keyCode == 40){
+    currentFocus++
+    addActive(plataformsList.options);
+}
+else if(e.keyCode == 38){
+    currentFocus--
+    addActive(plataformsList.options);
+}
+else if(e.keyCode == 13){
+    e.preventDefault();
+        if (currentFocus > -1) {
+        /*and simulate a click on the "active" item:*/
+        if (plataformsList.options) plataformsList.options[currentFocus].click();
+        }
+}
+}
+
+function addActive(x) {
+    if (!x) return false;
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    x[currentFocus].classList.add("active");
+}
+function removeActive(x) {
+    for (var i = 0; i < x.length; i++) {
+    x[i].classList.remove("active");
     }
-    else if(e.keyCode == 38){
-      currentFocus--
-     addActive(gamesList.options);
-    }
-    else if(e.keyCode == 13){
-      e.preventDefault();
-          if (currentFocus > -1) {
-            /*and simulate a click on the "active" item:*/
-            if (gamesList.options) gamesList.options[currentFocus].click();
-          }
-    }
-  }
-  
-  function addActive(x) {
-      if (!x) return false;
-      removeActive(x);
-      if (currentFocus >= x.length) currentFocus = 0;
-      if (currentFocus < 0) currentFocus = (x.length - 1);
-      x[currentFocus].classList.add("active");
-    }
-    function removeActive(x) {
-      for (var i = 0; i < x.length; i++) {
-        x[i].classList.remove("active");
-      }
-    }
+}
+
+// ----------------------------------------------------------------------------

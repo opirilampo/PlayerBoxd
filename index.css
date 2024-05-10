@@ -70,6 +70,7 @@ position: absolute;
 left: 50%;
 transform: translateX(-50%);
 width: 90%;
+height: 3vh;
 bottom:0%;
 }
 
@@ -432,8 +433,7 @@ border: none;
 
 #new-reviewModal .rating{
     font-size: calc(1.3vw + 1.3vh);
-
-margin-top: 20px;
+    margin-top: 20px;
 }
 
 .reviewbox p {
@@ -516,8 +516,7 @@ margin-top: 20px;
 }
 
 #new-reviewModal .review-writer{
-width: %;
-
+    width: 100%;
 }
 
 
@@ -630,16 +629,18 @@ width: %;
 }
 
 #header #new-reviewModal{
-    display: flex;
-    flex-direction:column;
+    position: absolute;
+    flex-direction: column;
     align-items: flex-start;
+    right: 1vw;
+    bottom: 6.2vh;
+    z-index: 2;
     background-color: #22202a;
     width: 25vw;
-    height: 50vh;       
+    height: 50vh;
     border-radius: 8px;
     padding: 10px;
-    margin-right: 20px;
-    margin-bottom: 20px;
+
 }
 
 #header #reviewModal{
@@ -717,6 +718,10 @@ display: block;
     border-color: #95845a;
     transition: border-color 0.3s ease;
 }
+#new-reviewModal .create{
+    margin-right: 1vw;
+
+}
 
 .modal-content .box-terms{
     display: flex;
@@ -774,17 +779,20 @@ display: block;
 }
 
 
-    #textReview{
-        width: 20vw;
-        height: 25vh;
-        border-radius: 10px;
-        border: 1px solid white;
-        background-color: transparent;
-        color:white;
-        display: flex;
-        align-items: flex-start;
+#textReview {
+    width: 23vw;
+    height: 25vh;
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    max-width: 23vw;
+    padding: 10px; 
+}
 
-    }
+
 
     .select-container {
         position: relative;
@@ -812,24 +820,22 @@ display: block;
         color:white;
         background-color: transparent;
         border: 2px solid #95845a;
+        padding-left: 12px;
     }
     datalist {
         position: absolute;
         border-top: none;
         width: 15vw;
-        padding: 5px;
         max-height: 12vh;
         overflow-y: auto;
         border-radius: 10px;
         padding: 5px;
         font-size: calc(0.5vw + 0.5vh);
         background-color: #2b2834;
+        z-index: 1;
     }
-    .terms{
-        font-family: Copperplate Gothic;
-        color: #faf0db;
-        font-size: calc(0.45vw + 0.45vh);
-        margin-top: 1px;
+    datalist .terms{
+        margin-top: 5px;
     
     }
     option:hover,  .active{
