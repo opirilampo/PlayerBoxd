@@ -198,7 +198,6 @@ else if(e.keyCode == 38){
 else if(e.keyCode == 13){
     e.preventDefault();
         if (currentFocus > -1) {
-        /*and simulate a click on the "active" item:*/
         if (gamesList.options) gamesList.options[currentFocus].click();
         }
 }
@@ -253,7 +252,6 @@ else if(e.keyCode == 38){
 else if(e.keyCode == 13){
     e.preventDefault();
         if (currentFocus > -1) {
-        /*and simulate a click on the "active" item:*/
         if (plataformsList.options) plataformsList.options[currentFocus].click();
         }
 }
