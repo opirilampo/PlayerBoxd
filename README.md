@@ -8,7 +8,7 @@ INSTALAÇÃO:
   - Execute o arquivo "Index.html"
 
 VISUALIZAÇÃO: 
-  Possui recursos visuais e lógicos inplementados por meio de CSS e JS visando a funcionalidade para o usúario.
+  Possui recursos visuais e lógicos implementados por meio de CSS e JS visando a funcionalidade para o usúario.
   
   Foco em interatividade em apenas uma única pagina concentrando diversos recursos, para evitar redirecionamentos desnecessários. 
 
